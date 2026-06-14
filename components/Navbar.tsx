@@ -10,6 +10,8 @@ const navLinks = [
   { label: "CONTACT", href: "/contact" },
 ];
 
+const check;
+
 export default function Navbar() {
   const pathname = usePathname();
 
