@@ -60,70 +60,70 @@ export default function Home() {
   return (
     <>
       {/* HERO */}
-      <section style={{ position: "relative", minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "center", overflow: "hidden", background: "#0e1520" }}>
-        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(135deg, #0d1822 0%, #16232e 30%, #1a2030 50%, #12181f 100%)" }} />
-        <div style={{ position: "absolute", inset: 0, backgroundImage: "repeating-linear-gradient(90deg, rgba(30,50,70,0.25) 0px, rgba(30,50,70,0.25) 2px, transparent 2px, transparent 80px), repeating-linear-gradient(0deg, rgba(30,50,70,0.1) 0px, rgba(30,50,70,0.1) 1px, transparent 1px, transparent 60px)" }} />
-        <div style={{ position: "absolute", right: "10%", top: "10%", width: "55%", height: "85%", background: "radial-gradient(ellipse at 60% 40%, rgba(180,120,50,0.12) 0%, transparent 60%)", pointerEvents: "none" }} />
-        <div style={{ height: 64 }} />
-        <div style={{ position: "relative", zIndex: 2, padding: "4rem 3rem", maxWidth: 1200, width: "100%", margin: "0 auto" }}>
-          <div style={{ maxWidth: 680 }}>
-            <p className="label-text" style={{ color: "#9d8553", marginBottom: "2rem" }}>EST. 1994 — NEWTON, MASSACHUSETTS</p>
-            <h1 style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "clamp(3rem, 7vw, 5.5rem)", fontWeight: 400, lineHeight: 1.05, color: "white", marginBottom: 0 }}>
+      <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-[#0e1520]">
+        <div className="absolute inset-0 bg-[linear-gradient(135deg,#0d1822_0%,#16232e_30%,#1a2030_50%,#12181f_100%)]" />
+        <div className="absolute inset-0 bg-[repeating-linear-gradient(90deg,rgba(30,50,70,0.25)_0px,rgba(30,50,70,0.25)_2px,transparent_2px,transparent_80px),repeating-linear-gradient(0deg,rgba(30,50,70,0.1)_0px,rgba(30,50,70,0.1)_1px,transparent_1px,transparent_60px)]" />
+        <div className="absolute right-[10%] top-[10%] w-[55%] h-[85%] bg-[radial-gradient(ellipse_at_60%_40%,rgba(180,120,50,0.12)_0%,transparent_60%)] pointer-events-none" />
+        <div className="h-16" />
+        <div className="relative z-[2] px-12 py-16 container-custom">
+          <div className="max-w-[680px]">
+            <p className="label-text text-gold mb-8">EST. 1994 — NEWTON, MASSACHUSETTS</p>
+            <h1 className="h1-hero">
               Dynamic<br />
-              <em style={{ color: "#9d8553", fontStyle: "italic", fontWeight: 300 }}>Technology</em><br />
+              <em className="text-gold italic font-light">Technology</em><br />
               Solutions
             </h1>
-            <p style={{ fontFamily: "Montserrat, sans-serif", fontSize: "0.85rem", color: "rgba(255,255,255,0.7)", lineHeight: 1.8, maxWidth: 420, marginTop: "2rem", marginBottom: "2.5rem" }}>
+            <p className="font-montserrat text-[0.85rem] text-white/70 leading-[1.8] max-w-[420px] mt-8 mb-10">
               Professional consulting, research, and development services — offering strategic process reengineering solutions to clients around the world.
             </p>
-            <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
+            <div className="flex gap-4 flex-wrap">
               <Link href="/services" className="btn-gold">EXPLORE SERVICES</Link>
               <Link href="/contact" className="btn-outline">GET IN TOUCH</Link>
             </div>
           </div>
         </div>
-        <div style={{ position: "absolute", bottom: "2.5rem", left: "50%", transform: "translateX(-50%)", display: "flex", flexDirection: "column", alignItems: "center", gap: "0.5rem", zIndex: 2 }}>
-          <span className="label-text" style={{ color: "rgba(255,255,255,0.4)", fontSize: "0.55rem" }}>SCROLL</span>
-          <div style={{ color: "rgba(255,255,255,0.4)" }}>↓</div>
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-[2]">
+          <span className="label-text text-white/40 text-[0.55rem]">SCROLL</span>
+          <div className="text-white/40">↓</div>
         </div>
       </section>
 
       {/* STATS */}
-      <section style={{ background: "#0e0d0c", padding: "5rem 3rem" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(4, 1fr)", textAlign: "center" }}>
+      <section className="bg-dark px-12 py-20">
+        <div className="container-custom grid grid-cols-4 text-center p-0">
           {[{ val: "30+", label: "YEARS OF EXPERIENCE" }, { val: "20+", label: "GLOBAL CLIENTS" }, { val: "5", label: "SERVICE DOMAINS" }, { val: "100%", label: "CLIENT RETENTION" }].map((s, i) => (
-            <div key={i} style={{ borderRight: i < 3 ? "1px solid rgba(157,133,83,0.15)" : "none", padding: "0 2rem" }}>
-              <div style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "3.5rem", fontWeight: 400, color: "#9d8553", lineHeight: 1, marginBottom: "0.75rem" }}>{s.val}</div>
-              <div style={{ width: 30, height: 1, background: "#9d8553", margin: "0 auto 0.75rem" }} />
-              <p className="label-text" style={{ color: "rgba(255,255,255,0.45)", fontSize: "0.6rem" }}>{s.label}</p>
+            <div key={i} className={`px-8 ${i < 3 ? "border-r border-gold/15" : "border-none"}`}>
+              <div className="font-cormorant text-[3.5rem] font-normal text-gold leading-none mb-3">{s.val}</div>
+              <div className="w-[30px] h-px bg-gold mx-auto mb-3" />
+              <p className="label-text text-white/45 text-[0.6rem]">{s.label}</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* SERVICES */}
-      <section style={{ background: "#f2ede6", padding: "7rem 3rem" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-          <p className="label-text" style={{ color: "#9d8553", marginBottom: "1.2rem" }}>WHAT WE DO</p>
-          <h2 style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "clamp(2.5rem, 5vw, 4rem)", fontWeight: 400, color: "#1a1714", lineHeight: 1.1, marginBottom: "4rem" }}>
-            Comprehensive<br /><em style={{ fontStyle: "italic" }}>Solutions</em> Portfolio
+      <section className="bg-cream section-padding">
+        <div className="container-custom p-0">
+          <p className="label-text text-gold mb-[1.2rem]">WHAT WE DO</p>
+          <h2 className="h2-section text-[#1a1714]">
+            Comprehensive<br /><em className="italic">Solutions</em> Portfolio
           </h2>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", borderTop: "1px solid rgba(0,0,0,0.1)" }}>
+          <div className="grid grid-cols-3 border-t border-black/10">
             {services.map((svc, i) => {
               const Icon = svc.icon;
               return (
-                <div key={i} style={{ padding: "2.5rem 2rem", borderRight: (i + 1) % 3 !== 0 ? "1px solid rgba(0,0,0,0.1)" : "none", borderBottom: "1px solid rgba(0,0,0,0.1)", background: svc.featured ? "#1a1714" : "transparent" }}>
-                  <Icon size={20} color="#9d8553" style={{ marginBottom: "1.25rem" }} />
-                  <h3 style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "1.4rem", fontWeight: 400, color: svc.featured ? "white" : "#3d3020", marginBottom: "0.9rem" }}>{svc.title}</h3>
-                  <p style={{ fontFamily: "Montserrat, sans-serif", fontSize: "0.75rem", color: svc.featured ? "rgba(255,255,255,0.65)" : "#7a6a55", lineHeight: 1.8 }}>{svc.description}</p>
-                  {svc.featured && <div style={{ marginTop: "1.5rem" }}><ArrowRight size={18} color="#9d8553" /></div>}
+                <div key={i} className={`px-8 py-10 border-b border-black/10 ${ (i + 1) % 3 !== 0 ? "border-r border-black/10" : "border-r-0" } ${svc.featured ? "bg-[#1a1714]" : "bg-transparent"}`}>
+                  <Icon size={20} className="text-gold mb-5" />
+                  <h3 className={`h3-card ${svc.featured ? "text-white" : "text-[#3d3020]"}`}>{svc.title}</h3>
+                  <p className={`font-montserrat text-[0.75rem] leading-[1.8] ${svc.featured ? "text-white/65" : "text-[#7a6a55]"}`}>{svc.description}</p>
+                  {svc.featured && <div className="mt-6"><ArrowRight size={18} className="text-gold" /></div>}
                 </div>
               );
             })}
-            <div style={{ padding: "2.5rem 2rem", background: "#e8e2d8", borderBottom: "1px solid rgba(0,0,0,0.1)" }} />
+            <div className="px-8 py-10 bg-[#e8e2d8] border-b border-black/10" />
           </div>
-          <div style={{ textAlign: "center", marginTop: "3rem" }}>
-            <Link href="/services" style={{ fontFamily: "Montserrat, sans-serif", fontSize: "0.7rem", letterSpacing: "0.15em", color: "#9d8553", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "0.6rem" }}>
+          <div className="text-center mt-12">
+            <Link href="/services" className="font-montserrat text-[0.7rem] tracking-[0.15em] text-gold no-underline inline-flex items-center gap-[0.6rem]">
               VIEW ALL SERVICES <ArrowRight size={14} />
             </Link>
           </div>
@@ -131,39 +131,39 @@ export default function Home() {
       </section>
 
       {/* ABOUT */}
-      <section style={{ background: "#0e0d0c", padding: "8rem 3rem" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5rem", alignItems: "center" }}>
-          <div style={{ position: "relative" }}>
-            <div style={{ width: "100%", aspectRatio: "4/5", background: "linear-gradient(160deg, #1a2535 0%, #0d1522 40%, #121a24 100%)", position: "relative", overflow: "hidden" }}>
-              <div style={{ position: "absolute", inset: 0, backgroundImage: "linear-gradient(0deg, rgba(157,133,83,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(157,133,83,0.08) 1px, transparent 1px)", backgroundSize: "40px 40px" }} />
-              <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%,-50%)", width: 2, height: "60%", background: "linear-gradient(to bottom, transparent, rgba(157,133,83,0.4), transparent)" }} />
-              <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%,-50%)", width: "60%", height: 2, background: "linear-gradient(to right, transparent, rgba(157,133,83,0.3), transparent)" }} />
+      <section className="bg-dark section-padding pt-32 pb-32">
+        <div className="container-custom p-0 grid grid-cols-2 gap-20 items-center">
+          <div className="relative">
+            <div className="w-full aspect-[4/5] bg-[linear-gradient(160deg,#1a2535_0%,#0d1522_40%,#121a24_100%)] relative overflow-hidden">
+              <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(157,133,83,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(157,133,83,0.08)_1px,transparent_1px)] bg-[length:40px_40px]" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-0.5 h-[60%] bg-[linear-gradient(to_bottom,transparent,rgba(157,133,83,0.4),transparent)]" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60%] h-0.5 bg-[linear-gradient(to_right,transparent,rgba(157,133,83,0.3),transparent)]" />
             </div>
-            <div style={{ position: "absolute", bottom: "3rem", right: "-2rem", background: "#9d8553", padding: "1.5rem 2rem", textAlign: "center" }}>
-              <div style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "2.5rem", fontWeight: 400, color: "white", lineHeight: 1 }}>30+</div>
-              <div className="label-text" style={{ color: "rgba(255,255,255,0.8)", fontSize: "0.6rem", marginTop: "0.3rem" }}>YEARS</div>
+            <div className="absolute bottom-12 -right-8 bg-gold px-8 py-6 text-center">
+              <div className="font-cormorant text-[2.5rem] font-normal text-white leading-none">30+</div>
+              <div className="label-text text-white/80 text-[0.6rem] mt-[0.3rem]">YEARS</div>
             </div>
           </div>
           <div>
-            <p className="label-text" style={{ color: "#9d8553", marginBottom: "1.2rem" }}>ABOUT LANCOR</p>
-            <h2 style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "clamp(2rem, 4vw, 3.2rem)", fontWeight: 400, color: "white", lineHeight: 1.2, marginBottom: "1.5rem" }}>
-              The Intrepid Handlers of<br /><em style={{ fontStyle: "italic", color: "#9d8553" }}>Technology Complexity</em>
+            <p className="label-text text-gold mb-[1.2rem]">ABOUT LANCOR</p>
+            <h2 className="font-cormorant text-[clamp(2rem,4vw,3.2rem)] font-normal text-white leading-[1.2] mb-6">
+              The Intrepid Handlers of<br /><em className="italic text-gold">Technology Complexity</em>
             </h2>
-            <p style={{ fontFamily: "Montserrat, sans-serif", fontSize: "0.8rem", color: "rgba(255,255,255,0.65)", lineHeight: 1.9, marginBottom: "1.25rem" }}>
+            <p className="font-montserrat text-[0.8rem] text-white/65 leading-[1.9] mb-5">
               Established in 1994, Lagos Analysis Corporation (LANCOR) is a privately held company headquartered in Newton, Massachusetts. We are a professional consulting, research, and development services firm offering strategic process reengineering solutions to private and public sector clients around the world.
             </p>
-            <p style={{ fontFamily: "Montserrat, sans-serif", fontSize: "0.8rem", color: "rgba(255,255,255,0.65)", lineHeight: 1.9, marginBottom: "2.5rem" }}>
+            <p className="font-montserrat text-[0.8rem] text-white/65 leading-[1.9] mb-10">
               If there&apos;s a big, complicated, even messy, perhaps convoluted, and halfway-botched IT project that nobody wants to touch — we&apos;re just the right company to take over. We&apos;re terrific at problem-solving.
             </p>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "1.5rem", marginBottom: "2.5rem" }}>
+            <div className="grid grid-cols-3 gap-6 mb-10">
               {[{ label: "EMPHASIS", val: "Precision & Excellence" }, { label: "HEADQUARTERS", val: "Newton, MA" }, { label: "CLIENTS", val: "Global Reach" }].map((item) => (
                 <div key={item.label}>
-                  <p className="label-text" style={{ color: "rgba(255,255,255,0.35)", marginBottom: "0.4rem", fontSize: "0.55rem" }}>{item.label}</p>
-                  <p style={{ fontFamily: "Montserrat, sans-serif", fontSize: "0.78rem", color: "white", fontWeight: 500 }}>{item.val}</p>
+                  <p className="label-text text-white/35 mb-[0.4rem] text-[0.55rem]">{item.label}</p>
+                  <p className="font-montserrat text-[0.78rem] text-white font-medium">{item.val}</p>
                 </div>
               ))}
             </div>
-            <Link href="/about" style={{ fontFamily: "Montserrat, sans-serif", fontSize: "0.7rem", letterSpacing: "0.15em", color: "#9d8553", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "0.6rem" }}>
+            <Link href="/about" className="font-montserrat text-[0.7rem] tracking-[0.15em] text-gold no-underline inline-flex items-center gap-[0.6rem]">
               LEARN MORE <ArrowRight size={14} />
             </Link>
           </div>
@@ -171,34 +171,34 @@ export default function Home() {
       </section>
 
       {/* NIN PROMO */}
-      <section style={{ background: "#9d8553", padding: "8rem 3rem", position: "relative", overflow: "hidden" }}>
-        <div style={{ position: "absolute", inset: 0, backgroundImage: "repeating-linear-gradient(45deg, rgba(0,0,0,0.04) 0px, rgba(0,0,0,0.04) 1px, transparent 1px, transparent 20px)" }} />
-        <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5rem", alignItems: "start", position: "relative", zIndex: 1 }}>
+      <section className="bg-gold section-padding pt-32 pb-32 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[repeating-linear-gradient(45deg,rgba(0,0,0,0.04)_0px,rgba(0,0,0,0.04)_1px,transparent_1px,transparent_20px)]" />
+        <div className="container-custom p-0 grid grid-cols-2 gap-20 items-start relative z-[1]">
           <div>
-            <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "2rem" }}>
-              <Shield size={16} color="rgba(0,0,0,0.5)" />
-              <span className="label-text" style={{ color: "rgba(0,0,0,0.55)", fontSize: "0.6rem" }}>NEW SERVICE — IN PARTNERSHIP WITH KNOWLEDGE SQUARE LLC</span>
+            <div className="flex items-center gap-3 mb-8">
+              <Shield size={16} className="text-black/50" />
+              <span className="label-text text-black/55 text-[0.6rem]">NEW SERVICE — IN PARTNERSHIP WITH KNOWLEDGE SQUARE LLC</span>
             </div>
-            <h2 style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "clamp(2.2rem, 4vw, 3.5rem)", fontWeight: 400, color: "#1a1714", lineHeight: 1.1, marginBottom: "1.5rem" }}>
-              Nigerian National <em style={{ fontStyle: "italic" }}>Identification Number</em><br />(NIN) Enrollment
+            <h2 className="font-cormorant text-[clamp(2.2rem,4vw,3.5rem)] font-normal text-[#1a1714] leading-[1.1] mb-6">
+              Nigerian National <em className="italic">Identification Number</em><br />(NIN) Enrollment
             </h2>
-            <p style={{ fontFamily: "Montserrat, sans-serif", fontSize: "0.8rem", color: "rgba(20,15,10,0.75)", lineHeight: 1.9 }}>
+            <p className="font-montserrat text-[0.8rem] text-[#140f0a]/75 leading-[1.9]">
               LANCOR, in partnership with Knowledge Square LLC, offers a convenient retail NIN enrollment service for Nigerians. We facilitate the official registration process for the Nigerian Government&apos;s National Identification Number — enabling identity verification, access to government services, and digital inclusion.
             </p>
           </div>
           <div>
-            <div style={{ border: "1px solid rgba(0,0,0,0.12)", padding: "2rem", marginBottom: "1.5rem", background: "rgba(0,0,0,0.06)" }}>
+            <div className="border border-black/12 p-8 mb-6 bg-black/6">
               {["Official NIN enrollment for Nigerian nationals", "Convenient US-based enrollment center", "Secure processing in partnership with Knowledge Square LLC", "Supports access to Nigerian government services", "Fast, professional, and confidential service"].map((item) => (
-                <div key={item} style={{ display: "flex", gap: "0.75rem", alignItems: "flex-start", marginBottom: "0.9rem", fontFamily: "Montserrat, sans-serif", fontSize: "0.78rem", color: "rgba(20,15,10,0.8)", lineHeight: 1.6 }}>
-                  <span style={{ fontSize: "0.5rem", marginTop: 5, flexShrink: 0 }}>●</span>{item}
+                <div key={item} className="flex gap-3 items-start mb-[0.9rem] font-montserrat text-[0.78rem] text-[#140f0a]/80 leading-[1.6]">
+                  <span className="text-[0.5rem] mt-[5px] flex-shrink-0">●</span>{item}
                 </div>
               ))}
             </div>
-            <div style={{ display: "flex", gap: "1rem" }}>
-              <a href="/nin-enrollment" className="btn-gold" style={{ background: "#1a1714", textDecoration: "none" }}>
+            <div className="flex gap-4">
+              <a href="/nin-enrollment" className="btn-gold bg-[#1a1714] no-underline">
                 <Calendar size={14} /> BOOK APPOINTMENT
               </a>
-              <a href="/nin-enrollment" style={{ fontFamily: "Montserrat, sans-serif", fontSize: "0.7rem", letterSpacing: "0.12em", color: "#1a1714", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "0.6rem", border: "1px solid rgba(0,0,0,0.3)", padding: "1rem 1.5rem", fontWeight: 500 }}>
+              <a href="/nin-enrollment" className="font-montserrat text-[0.7rem] tracking-[0.12em] text-[#1a1714] no-underline inline-flex items-center gap-[0.6rem] border border-black/30 px-6 py-4 font-medium">
                 LEARN MORE <ArrowRight size={14} />
               </a>
             </div>
@@ -207,14 +207,14 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section style={{ position: "relative", padding: "10rem 3rem", background: "#0e1218", textAlign: "center", overflow: "hidden" }}>
-        <div style={{ position: "absolute", inset: 0, backgroundImage: "linear-gradient(0deg, rgba(157,133,83,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(157,133,83,0.05) 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
-        <div style={{ position: "relative", zIndex: 1 }}>
-          <p className="label-text" style={{ color: "#9d8553", marginBottom: "1.5rem" }}>READY TO TRANSFORM?</p>
-          <h2 style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "clamp(3rem, 6vw, 5rem)", fontWeight: 400, color: "white", lineHeight: 1.1 }}>
-            Let&apos;s Build<br /><em style={{ fontStyle: "italic", color: "#9d8553" }}>Something Remarkable</em>
+      <section className="relative section-padding pt-40 pb-40 bg-[#0e1218] text-center overflow-hidden">
+        <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(157,133,83,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(157,133,83,0.05)_1px,transparent_1px)] bg-[length:60px_60px]" />
+        <div className="relative z-[1]">
+          <p className="label-text text-gold mb-6">READY TO TRANSFORM?</p>
+          <h2 className="font-cormorant text-[clamp(3rem,6vw,5rem)] font-normal text-white leading-[1.1]">
+            Let&apos;s Build<br /><em className="italic text-gold">Something Remarkable</em>
           </h2>
-          <p style={{ fontFamily: "Montserrat, sans-serif", fontSize: "0.82rem", color: "rgba(255,255,255,0.6)", maxWidth: 560, margin: "2rem auto 3rem", lineHeight: 1.8 }}>
+          <p className="font-montserrat text-[0.82rem] text-white/60 max-w-[560px] mx-auto mt-8 mb-12 leading-[1.8]">
             We&apos;re the no-nonsense, never-say-never, super-efficient lovers of challenges. Bring us your toughest IT problems.
           </p>
           <Link href="/contact" className="btn-gold">START A CONVERSATION <ArrowRight size={14} /></Link>
