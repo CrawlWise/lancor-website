@@ -3,34 +3,34 @@ import { Phone, Mail, MapPin } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer style={{ background: "#0e0d0c", borderTop: "1px solid rgba(157,133,83,0.2)", padding: "5rem 0 3rem" }}>
-      <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 3rem" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "1.5fr 1fr 1fr 1.3fr", gap: "3rem" }}>
+    <footer className="bg-[#0e0d0c] border-t border-[rgba(157,133,83,0.2)] py-[5rem_0_3rem] pt-20 pb-12">
+      <div className="max-w-300 mx-auto px-12">
+        <div className="grid grid-cols-[1.5fr_1fr_1fr_1.3fr] gap-12">
           {/* Brand */}
           <div>
-            <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "1.5rem" }}>
-              <div style={{ width: 36, height: 36, border: "1px solid #9d8553", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <span style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "1.1rem", color: "#9d8553" }}>L</span>
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-9 h-9 border border-[#9d8553] flex items-center justify-center">
+                <span className="font-cormorant text-[1.1rem] text-[#9d8553]">L</span>
               </div>
-              <span style={{ fontFamily: "Montserrat, sans-serif", fontSize: "0.9rem", fontWeight: 600, color: "white", letterSpacing: "0.1em" }}>LANCOR</span>
+              <span className="font-montserrat text-[0.9rem] font-semibold text-white tracking-widest">LANCOR</span>
             </div>
-            <p style={{ fontFamily: "Montserrat, sans-serif", fontSize: "0.78rem", color: "rgba(255,255,255,0.5)", lineHeight: 1.8, marginBottom: "1.5rem" }}>
+            <p className="font-montserrat text-[0.78rem] text-[rgba(255,255,255,0.5)] leading-[1.8] mb-6">
               Dynamic Technology Solutions Provider. Precision, Excellence, Performance, and Service since 1994.
             </p>
-            <div style={{ display: "inline-block", border: "1px solid rgba(157,133,83,0.4)", padding: "0.4rem 1rem" }}>
-              <span style={{ fontFamily: "Montserrat, sans-serif", fontSize: "0.6rem", color: "#9d8553", letterSpacing: "0.1em" }}>D-U-N-S # 009498669</span>
+            <div className="inline-block border border-[rgba(157,133,83,0.4)] px-4 py-[0.4rem]">
+              <span className="font-montserrat text-[0.6rem] text-[#9d8553] tracking-widest">D-U-N-S # 009498669</span>
             </div>
           </div>
 
           {/* Navigation */}
           <div>
-            <div className="label-text" style={{ color: "rgba(255,255,255,0.5)", marginBottom: "1.5rem" }}>NAVIGATION</div>
-            <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: "0.9rem" }}>
+            <div className="label-text text-[rgba(255,255,255,0.5)] mb-6">NAVIGATION</div>
+            <ul className="list-none flex flex-col gap-[0.9rem]">
               {["Home", "About", "Services", "Contact"].map((item) => (
                 <li key={item}>
                   <Link
                     href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
-                    style={{ fontFamily: "Montserrat, sans-serif", fontSize: "0.78rem", color: "rgba(255,255,255,0.6)", textDecoration: "none", transition: "color 0.2s" }}
+                    className="font-montserrat text-[0.78rem] text-[rgba(255,255,255,0.6)] no-underline transition-colors duration-200"
                   >
                     {item}
                   </Link>
@@ -41,13 +41,13 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <div className="label-text" style={{ color: "rgba(255,255,255,0.5)", marginBottom: "1.5rem" }}>SERVICES</div>
-            <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: "0.9rem" }}>
+            <div className="label-text text-[rgba(255,255,255,0.5)] mb-6">SERVICES</div>
+            <ul className="list-none flex flex-col gap-[0.9rem]">
               {["Software Development", "Cloud Computing", "IT Infrastructure", "Business Consulting", "Government IT"].map((s) => (
                 <li key={s}>
                   <Link
                     href="/services"
-                    style={{ fontFamily: "Montserrat, sans-serif", fontSize: "0.78rem", color: "rgba(255,255,255,0.6)", textDecoration: "none" }}
+                    className="font-montserrat text-[0.78rem] text-[rgba(255,255,255,0.6)] no-underline"
                   >
                     {s}
                   </Link>
@@ -58,32 +58,32 @@ export default function Footer() {
 
           {/* Headquarters */}
           <div>
-            <div className="label-text" style={{ color: "rgba(255,255,255,0.5)", marginBottom: "1.5rem" }}>HEADQUARTERS</div>
-            <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-              <div style={{ display: "flex", gap: "0.75rem", alignItems: "flex-start" }}>
-                <MapPin size={14} color="#9d8553" style={{ marginTop: 2, flexShrink: 0 }} />
-                <span style={{ fontFamily: "Montserrat, sans-serif", fontSize: "0.75rem", color: "rgba(255,255,255,0.6)", lineHeight: 1.7 }}>
+            <div className="label-text text-[rgba(255,255,255,0.5)] mb-6">HEADQUARTERS</div>
+            <div className="flex flex-col gap-4">
+              <div className="flex gap-3 items-start">
+                <MapPin size={14} color="#9d8553" className="mt-[2px] shrink-0" />
+                <span className="font-montserrat text-[0.75rem] text-[rgba(255,255,255,0.6)] leading-[1.7]">
                   2000 Commonwealth Ave, Suite 310<br />Newton Auburndale, MA 02466
                 </span>
               </div>
-              <div style={{ display: "flex", gap: "0.75rem", alignItems: "center" }}>
-                <Phone size={14} color="#9d8553" style={{ flexShrink: 0 }} />
-                <span style={{ fontFamily: "Montserrat, sans-serif", fontSize: "0.75rem", color: "rgba(255,255,255,0.6)" }}>617.431.6200</span>
+              <div className="flex gap-3 items-center">
+                <Phone size={14} color="#9d8553" className="shrink-0" />
+                <span className="font-montserrat text-[0.75rem] text-[rgba(255,255,255,0.6)]">617.431.6200</span>
               </div>
-              <div style={{ display: "flex", gap: "0.75rem", alignItems: "center" }}>
-                <Mail size={14} color="#9d8553" style={{ flexShrink: 0 }} />
-                <span style={{ fontFamily: "Montserrat, sans-serif", fontSize: "0.75rem", color: "rgba(255,255,255,0.6)" }}>Oyegbola@lancorltd.com</span>
+              <div className="flex gap-3 items-center">
+                <Mail size={14} color="#9d8553" className="shrink-0" />
+                <span className="font-montserrat text-[0.75rem] text-[rgba(255,255,255,0.6)]">Oyegbola@lancorltd.com</span>
               </div>
             </div>
           </div>
         </div>
 
         {/* Bottom bar */}
-        <div style={{ marginTop: "4rem", paddingTop: "2rem", borderTop: "1px solid rgba(255,255,255,0.08)", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-          <span style={{ fontFamily: "Montserrat, sans-serif", fontSize: "0.65rem", color: "rgba(255,255,255,0.3)" }}>
+        <div className="mt-16 pt-8 border-t border-[rgba(255,255,255,0.08)] flex justify-between items-center">
+          <span className="font-montserrat text-[0.65rem] text-[rgba(255,255,255,0.3)]">
             © 2024 Lagos Analysis Corporation. All rights reserved.
           </span>
-          <span style={{ fontFamily: "Montserrat, sans-serif", fontSize: "0.65rem", color: "rgba(255,255,255,0.3)" }}>
+          <span className="font-montserrat text-[0.65rem] text-[rgba(255,255,255,0.3)]">
             UNGM Registration # 104496
           </span>
         </div>

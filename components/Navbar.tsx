@@ -30,12 +30,12 @@ export default function Navbar() {
         </div>
         <div>
           <div
-            className="font-['Montserrat,sans-serif'] text-[0.95rem] font-semibold text-white tracking-widest"
+            className="font-montserrat text-[0.95rem] font-semibold text-white tracking-widest"
           >
             LANCOR
           </div>
           <div
-            className="font-['Montserrat,sans-serif'] text-[0.55rem] text-[#9d8553] tracking-[0.2em]"
+            className="font-montserrat text-[0.55rem] text-[#9d8553] tracking-[0.2em]"
           >
             EST. 1994
           </div>
@@ -53,7 +53,7 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className={`font-['Montserrat,sans-serif'] text-[0.65rem] tracking-[0.15em] ${isActive ? "text-[#9d8553]" : "text-[rgba(255,255,255,0.8)]"} no-underline font-medium transition-colors duration-200`}
+              className={`font-montserrat text-[0.65rem] tracking-[0.15em] ${isActive ? "text-[#9d8553]" : "text-[rgba(255,255,255,0.8)]"} no-underline font-medium transition-colors duration-200`}
             >
               {link.label}
             </Link>

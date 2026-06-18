@@ -11,6 +11,11 @@
   --text-muted: #8a7d6e;
 }
 
+@theme {
+  --font-montserrat: "Montserrat", sans-serif;
+  --font-cormorant: "Cormorant Garamond", serif;
+}
+
 * { 
     box-sizing: border-box; 
   }
