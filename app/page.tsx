@@ -102,10 +102,10 @@ export default function Home() {
       </section>
 
       {/* SERVICES */}
-      <section className="bg-[#f2ede6] py-[7rem] px-[3rem]">
-        <div className="max-w-[1200px] mx-auto">
+      <section className="bg-[#f2ede6] py-28 px-12">
+        <div className="max-w-300 mx-auto">
           <p className="label-text text-[#9d8553] mb-[1.2rem]">WHAT WE DO</p>
-          <h2 className="font-cormorant text-[clamp(2.5rem,5vw,4rem)] font-normal text-[#1a1714] leading-[1.1] mb-[4rem]">
+          <h2 className="font-cormorant text-[clamp(2.5rem,5vw,4rem)] font-normal text-[#1a1714] leading-[1.1] mb-16">
             Comprehensive<br /><em className="italic">Solutions</em> Portfolio
           </h2>
           <div className="grid grid-cols-3 border-t border-[rgba(0,0,0,0.1)]">
@@ -114,11 +114,11 @@ export default function Home() {
               return (
                 <div
                   key={i}
-                  className={`p-[2.5rem_2rem] border-b border-[rgba(0,0,0,0.1)] ${(i + 1) % 3 !== 0 ? "border-r border-[rgba(0,0,0,0.1)]" : ""} ${svc.featured ? "bg-[#1a1714]" : "bg-transparent"}`}
+                  className={`group hover:bg-[#1a1714] p-[2.5rem_2rem] border-b border-[rgba(0,0,0,0.1)] ${(i + 1) % 3 !== 0 ? "border-r border-[rgba(0,0,0,0.1)]" : ""} ${svc.featured ? "bg-[#1a1714]" : "bg-transparent"}`}
                 >
-                  <Icon size={20} color="#9d8553" className="mb-[1.25rem]" />
-                  <h3 className={`font-cormorant text-[1.4rem] font-normal mb-[0.9rem] ${svc.featured ? "text-white" : "text-[#3d3020]"}`}>{svc.title}</h3>
-                  <p className={`font-montserrat text-[0.75rem] leading-[1.8] ${svc.featured ? "text-[rgba(255,255,255,0.65)]" : "text-[#7a6a55]"}`}>{svc.description}</p>
+                  <Icon size={20} color="#9d8553" className="mb-5" />
+                  <h3 className={`group-hover:text-white font-cormorant text-[1.4rem] font-normal mb-[0.9rem] ${svc.featured ? "text-white" : "text-[#3d3020]"}`}>{svc.title}</h3>
+                  <p className={`group-hover:text-[rgba(255,255,255,0.65)] font-montserrat text-[0.75rem] leading-[1.8] ${svc.featured ? "text-[rgba(255,255,255,0.65)]" : "text-[#7a6a55]"}`}>{svc.description}</p>
                   {svc.featured && <div className="mt-6"><ArrowRight size={18} color="#9d8553" /></div>}
                 </div>
               );
@@ -155,10 +155,10 @@ export default function Home() {
             <p className="font-montserrat text-[0.8rem] text-[rgba(255,255,255,0.65)] leading-[1.9] mb-5">
               Established in 1994, Lagos Analysis Corporation (LANCOR) is a privately held company headquartered in Newton, Massachusetts. We are a professional consulting, research, and development services firm offering strategic process reengineering solutions to private and public sector clients around the world.
             </p>
-            <p className="font-montserrat text-[0.8rem] text-[rgba(255,255,255,0.65)] leading-[1.9] mb-[2.5rem]">
+            <p className="font-montserrat text-[0.8rem] text-[rgba(255,255,255,0.65)] leading-[1.9] mb-10">
               If there&apos;s a big, complicated, even messy, perhaps convoluted, and halfway-botched IT project that nobody wants to touch — we&apos;re just the right company to take over. We&apos;re terrific at problem-solving.
             </p>
-            <div className="grid grid-cols-3 gap-6 mb-[2.5rem]">
+            <div className="grid grid-cols-3 gap-6 mb-10">
               {[{ label: "EMPHASIS", val: "Precision & Excellence" }, { label: "HEADQUARTERS", val: "Newton, MA" }, { label: "CLIENTS", val: "Global Reach" }].map((item) => (
                 <div key={item.label}>
                   <p className="label-text text-[rgba(255,255,255,0.35)] mb-[0.4rem] text-[0.55rem]">{item.label}</p>
@@ -174,11 +174,11 @@ export default function Home() {
       </section>
 
       {/* NIN PROMO */}
-      <section className="bg-[#9d8553] py-[8rem] px-[3rem] relative overflow-hidden">
+      <section className="bg-[#9d8553] py-32 px-12 relative overflow-hidden">
         <div className="absolute inset-0 bg-[repeating-linear-gradient(45deg,rgba(0,0,0,0.04)_0px,rgba(0,0,0,0.04)_1px,transparent_1px,transparent_20px)]" />
-        <div className="max-w-300 mx-auto grid grid-cols-2 gap-[5rem] items-start relative z-[1]">
+        <div className="max-w-300 mx-auto grid grid-cols-2 gap-20 items-start relative z-1">
           <div>
-            <div className="flex items-center gap-3 mb-[2rem]">
+            <div className="flex items-center gap-3 mb-8">
               <Shield size={16} color="rgba(0,0,0,0.5)" />
               <span className="label-text text-[rgba(0,0,0,0.55)] text-[0.6rem]">NEW SERVICE — IN PARTNERSHIP WITH KNOWLEDGE SQUARE LLC</span>
             </div>
@@ -190,20 +190,20 @@ export default function Home() {
             </p>
           </div>
           <div>
-            <div className="border border-[rgba(0,0,0,0.12)] p-[2rem] mb-6 bg-[rgba(0,0,0,0.06)]">
+            <div className="border border-[rgba(0,0,0,0.12)] p-8 mb-6 bg-[rgba(0,0,0,0.06)]">
               {["Official NIN enrollment for Nigerian nationals", "Convenient US-based enrollment center", "Secure processing in partnership with Knowledge Square LLC", "Supports access to Nigerian government services", "Fast, professional, and confidential service"].map((item) => (
                 <div key={item} className="flex gap-3 items-start mb-[0.9rem] font-montserrat text-[0.78rem] text-[rgba(20,15,10,0.8)] leading-[1.6]">
-                  <span className="text-[0.5rem] mt-[5px] shrink-0">●</span>{item}
+                  <span className="text-[0.5rem] mt-1.25 shrink-0">●</span>{item}
                 </div>
               ))}
             </div>
             <div className="flex gap-4">
-              <a href="/nin-enrollment" className="btn-gold bg-[#1a1714] no-underline">
+              <Link href="/nin-enrollment" className="btn-dark bg-[#1a1714] no-underline">
                 <Calendar size={14} /> BOOK APPOINTMENT
-              </a>
-              <a href="/nin-enrollment" className="font-montserrat text-[0.7rem] tracking-[0.12em] text-[#1a1714] no-underline inline-flex items-center gap-[0.6rem] border border-[rgba(0,0,0,0.3)] px-6 py-4 font-medium">
+              </Link>
+              <Link href="/nin-enrollment" className="font-montserrat text-[0.7rem] tracking-[0.12em] text-[#1a1714] no-underline inline-flex items-center gap-[0.6rem] border border-[rgba(0,0,0,0.3)] px-6 py-4 font-medium">
                 LEARN MORE <ArrowRight size={14} />
-              </a>
+              </Link>
             </div>
           </div>
         </div>

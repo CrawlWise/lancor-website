@@ -52,6 +52,24 @@ body {
   border: none;
   text-decoration: none;
 }
+
+.btn-dark {
+  background-color: var(--dark);
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 1rem 2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.2s;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+}
 .btn-gold:hover { background-color: var(--gold-dark); }
 
 .btn-outline {
