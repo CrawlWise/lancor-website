@@ -5,31 +5,31 @@ export default function NINEnrollment() {
   return (
     <>
       {/* HERO */}
-      <section style={{ background: "#0e0d0c", paddingTop: 64, minHeight: "auto", position: "relative", padding: "calc(64px + 4rem) 3rem 5rem" }}>
-        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, #0a0e14 0%, #0e0d0c 100%)" }} />
-        <div style={{ position: "relative", zIndex: 2, maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "start" }}>
+      <section className="bg-dark pt-16 min-h-auto relative px-12 py-16 pt-[calc(64px+4rem)] pb-20">
+        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,#0a0e14_0%,#0e0d0c_100%)]" />
+        <div className="relative z-[2] container-custom p-0 grid grid-cols-2 gap-16 items-start">
           <div>
-            <div style={{ display: "flex", alignItems: "center", gap: "0.6rem", marginBottom: "1.5rem" }}>
-              <div style={{ width: 8, height: 8, borderRadius: "50%", background: "#4ade80" }} />
-              <span style={{ fontFamily: "Montserrat, sans-serif", fontSize: "0.6rem", letterSpacing: "0.2em", color: "rgba(255,255,255,0.5)", textTransform: "uppercase" }}>NIMC-AUTHORIZED ENROLLMENT CENTER</span>
+            <div className="flex items-center gap-[0.6rem] mb-6">
+              <div className="w-2 h-2 rounded-full bg-[#4ade80]" />
+              <span className="font-montserrat text-[0.6rem] tracking-[0.2em] text-white/50 uppercase">NIMC-AUTHORIZED ENROLLMENT CENTER</span>
             </div>
-            <h1 style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "clamp(2.5rem, 5vw, 4rem)", fontWeight: 400, color: "white", lineHeight: 1.05, marginBottom: "1.5rem" }}>
+            <h1 className="font-cormorant text-[clamp(2.5rem,5vw,4rem)] font-normal text-white leading-[1.05] mb-6">
               Nigerian NIN<br />
-              <em style={{ fontStyle: "italic", color: "#9d8553" }}>Enrollment</em><br />
+              <em className="italic text-gold">Enrollment</em><br />
               Service
             </h1>
-            <p style={{ fontFamily: "Montserrat, sans-serif", fontSize: "0.8rem", color: "rgba(255,255,255,0.65)", lineHeight: 1.9, marginBottom: "2rem" }}>
-              LANCOR, in partnership with <strong style={{ color: "white", fontWeight: 500 }}>Knowledge Square LLC</strong>, is an officially authorized center for Nigerian National Identification Number (NIN) enrollment serving Nigerians in the Greater Boston area and beyond.
+            <p className="font-montserrat text-[0.8rem] text-white/65 leading-[1.9] mb-8">
+              LANCOR, in partnership with <strong className="text-white font-medium">Knowledge Square LLC</strong>, is an officially authorized center for Nigerian National Identification Number (NIN) enrollment serving Nigerians in the Greater Boston area and beyond.
             </p>
-            <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
+            <div className="flex gap-4 flex-wrap">
               <a href="#" className="btn-gold"><Calendar size={14} /> BOOK APPOINTMENT</a>
               <a href="tel:+16174316200" className="btn-outline"><Phone size={14} /> CALL US</a>
             </div>
           </div>
 
           {/* Info card */}
-          <div style={{ border: "1px solid rgba(157,133,83,0.3)", padding: "2.5rem", background: "rgba(157,133,83,0.05)" }}>
-            <h3 style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "1.5rem", fontWeight: 400, color: "white", marginBottom: "2rem" }}>Enrollment Center Details</h3>
+          <div className="border border-gold/30 p-10 bg-gold/5">
+            <h3 className="font-cormorant text-[1.5rem] font-normal text-white mb-8">Enrollment Center Details</h3>
             {[
               { icon: MapPin, label: "LOCATION", val: "2000 Commonwealth Ave, Suite 310\nNewton Auburndale, MA 02466" },
               { icon: Phone, label: "PHONE", val: "+1 617.431.6200" },
@@ -38,11 +38,11 @@ export default function NINEnrollment() {
             ].map((item) => {
               const Icon = item.icon;
               return (
-                <div key={item.label} style={{ display: "flex", gap: "1rem", alignItems: "flex-start", marginBottom: "1.75rem" }}>
-                  <Icon size={16} color="#9d8553" style={{ marginTop: 2, flexShrink: 0 }} />
+                <div key={item.label} className="flex gap-4 items-start mb-7">
+                  <Icon size={16} className="text-gold mt-0.5 flex-shrink-0" />
                   <div>
-                    <p style={{ fontFamily: "Montserrat, sans-serif", fontSize: "0.55rem", letterSpacing: "0.18em", color: "rgba(255,255,255,0.35)", marginBottom: "0.4rem" }}>{item.label}</p>
-                    <p style={{ fontFamily: "Montserrat, sans-serif", fontSize: "0.78rem", color: "rgba(255,255,255,0.75)", lineHeight: 1.7, whiteSpace: "pre-line" }}>{item.val}</p>
+                    <p className="font-montserrat text-[0.55rem] tracking-[0.18em] text-white/35 mb-1.5">{item.label}</p>
+                    <p className="font-montserrat text-[0.78rem] text-white/75 leading-[1.7] whitespace-pre-line">{item.val}</p>
                   </div>
                 </div>
               );
@@ -52,32 +52,32 @@ export default function NINEnrollment() {
       </section>
 
       {/* WHAT IS NIN + WHY YOU NEED */}
-      <section style={{ background: "#f2ede6", padding: "7rem 3rem" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5rem" }}>
+      <section className="bg-cream section-padding">
+        <div className="container-custom p-0 grid grid-cols-2 gap-20">
           <div>
-            <p style={{ fontFamily: "Montserrat, sans-serif", fontSize: "0.65rem", letterSpacing: "0.2em", color: "#9d8553", textTransform: "uppercase", marginBottom: "1.2rem" }}>BACKGROUND</p>
-            <h2 style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 400, color: "#1a1714", lineHeight: 1.15, marginBottom: "1.5rem" }}>
-              What is the <em style={{ fontStyle: "italic" }}>NIN?</em>
+            <p className="font-montserrat text-[0.65rem] tracking-[0.2em] text-gold uppercase mb-[1.2rem]">BACKGROUND</p>
+            <h2 className="font-cormorant text-[clamp(2rem,4vw,3rem)] font-normal text-[#1a1714] leading-[1.15] mb-6">
+              What is the <em className="italic">NIN?</em>
             </h2>
-            <p style={{ fontFamily: "Montserrat, sans-serif", fontSize: "0.8rem", color: "#7a6a55", lineHeight: 1.9, marginBottom: "1.25rem" }}>
+            <p className="font-montserrat text-[0.8rem] text-[#7a6a55] leading-[1.9] mb-5">
               The National Identification Number (NIN) is an 11-digit unique identifier issued by Nigeria&apos;s National Identity Management Commission (NIMC) to every Nigerian citizen and legal resident. It is the cornerstone of Nigeria&apos;s digital identity infrastructure.
             </p>
-            <p style={{ fontFamily: "Montserrat, sans-serif", fontSize: "0.8rem", color: "#7a6a55", lineHeight: 1.9, marginBottom: "2rem" }}>
+            <p className="font-montserrat text-[0.8rem] text-[#7a6a55] leading-[1.9] mb-8">
               The NIN consolidates your biometric data — fingerprints, facial image, and demographic information — into a single secure identity. It is now mandatory for most official transactions in Nigeria.
             </p>
-            <blockquote style={{ borderLeft: "3px solid #9d8553", paddingLeft: "1.5rem" }}>
-              <p style={{ fontFamily: "Cormorant Garamond, serif", fontStyle: "italic", fontSize: "1.05rem", color: "#5a4a38", lineHeight: 1.7 }}>
+            <blockquote className="border-l-[3px] border-gold pl-6">
+              <p className="font-cormorant italic text-[1.05rem] text-[#5a4a38] leading-[1.7]">
                 &ldquo;LANCOR is listed as an official NIN enrollment center in the United States.&rdquo;
               </p>
             </blockquote>
           </div>
 
           <div>
-            <p style={{ fontFamily: "Montserrat, sans-serif", fontSize: "0.65rem", letterSpacing: "0.2em", color: "#9d8553", textTransform: "uppercase", marginBottom: "1.2rem" }}>WHY YOU NEED A NIN</p>
-            <h2 style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "clamp(1.8rem, 3vw, 2.5rem)", fontWeight: 400, color: "#9d8553", fontStyle: "italic", marginBottom: "2rem" }}>
+            <p className="font-montserrat text-[0.65rem] tracking-[0.2em] text-gold uppercase mb-[1.2rem]">WHY YOU NEED A NIN</p>
+            <h2 className="font-cormorant text-[clamp(1.8rem,3vw,2.5rem)] font-normal text-gold italic mb-8">
               Essential for Every Nigerian
             </h2>
-            <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+            <div className="flex flex-col gap-4">
               {[
                 "Required for Nigerian passport renewal and issuance",
                 "Mandatory for SIM card registration in Nigeria",
@@ -86,9 +86,9 @@ export default function NINEnrollment() {
                 "Required for voter registration (PVC)",
                 "Essential for tax identification and financial transactions",
               ].map((item) => (
-                <div key={item} style={{ display: "flex", gap: "0.75rem", alignItems: "flex-start" }}>
-                  <CheckCircle size={16} color="#9d8553" style={{ marginTop: 1, flexShrink: 0 }} />
-                  <span style={{ fontFamily: "Montserrat, sans-serif", fontSize: "0.78rem", color: "#7a6a55", lineHeight: 1.7 }}>{item}</span>
+                <div key={item} className="flex gap-3 items-start">
+                  <CheckCircle size={16} className="text-gold mt-0.5 flex-shrink-0" />
+                  <span className="font-montserrat text-[0.78rem] text-[#7a6a55] leading-[1.7]">{item}</span>
                 </div>
               ))}
             </div>
@@ -97,23 +97,23 @@ export default function NINEnrollment() {
       </section>
 
       {/* HOW IT WORKS */}
-      <section style={{ background: "#0e0d0c", padding: "7rem 3rem" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-          <p style={{ fontFamily: "Montserrat, sans-serif", fontSize: "0.65rem", letterSpacing: "0.2em", color: "#9d8553", textTransform: "uppercase", marginBottom: "1.2rem" }}>ENROLLMENT PROCESS</p>
-          <h2 style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 400, color: "white", marginBottom: "4rem" }}>
-            How It <em style={{ fontStyle: "italic", color: "#9d8553" }}>Works</em>
+      <section className="bg-dark section-padding">
+        <div className="container-custom p-0">
+          <p className="font-montserrat text-[0.65rem] tracking-[0.2em] text-gold uppercase mb-[1.2rem]">ENROLLMENT PROCESS</p>
+          <h2 className="font-cormorant text-[clamp(2rem,4vw,3rem)] font-normal text-white mb-16">
+            How It <em className="italic text-gold">Works</em>
           </h2>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "2rem" }}>
+          <div className="grid grid-cols-4 gap-8">
             {[
               { step: "01", title: "Book Appointment", desc: "Schedule your enrollment session online or by phone. Appointments are required — no walk-ins." },
               { step: "02", title: "Gather Documents", desc: "Bring your Nigerian passport, birth certificate, or other valid Nigerian identity documents." },
               { step: "03", title: "Biometric Capture", desc: "Your fingerprints, photograph, and demographic information are captured securely on-site." },
               { step: "04", title: "NIN Issued", desc: "Your NIN is issued by NIMC and you receive your enrollment slip. Processing takes 2–4 weeks." },
             ].map((s) => (
-              <div key={s.step} style={{ paddingTop: "2rem", borderTop: "1px solid rgba(157,133,83,0.3)" }}>
-                <div style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "2.5rem", color: "rgba(157,133,83,0.3)", lineHeight: 1, marginBottom: "1.25rem" }}>{s.step}</div>
-                <h3 style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "1.3rem", fontWeight: 400, color: "white", marginBottom: "0.75rem" }}>{s.title}</h3>
-                <p style={{ fontFamily: "Montserrat, sans-serif", fontSize: "0.75rem", color: "rgba(255,255,255,0.5)", lineHeight: 1.8 }}>{s.desc}</p>
+              <div key={s.step} className="pt-8 border-t border-gold/30">
+                <div className="font-cormorant text-[2.5rem] text-gold/30 leading-none mb-5">{s.step}</div>
+                <h3 className="font-cormorant text-[1.3rem] font-normal text-white mb-3">{s.title}</h3>
+                <p className="font-montserrat text-[0.75rem] text-white/50 leading-[1.8]">{s.desc}</p>
               </div>
             ))}
           </div>
@@ -121,17 +121,17 @@ export default function NINEnrollment() {
       </section>
 
       {/* CTA */}
-      <section style={{ background: "#9d8553", padding: "6rem 3rem", textAlign: "center" }}>
-        <p style={{ fontFamily: "Montserrat, sans-serif", fontSize: "0.65rem", letterSpacing: "0.2em", color: "rgba(0,0,0,0.5)", textTransform: "uppercase", marginBottom: "1.2rem" }}>GET STARTED TODAY</p>
-        <h2 style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "clamp(2rem, 4vw, 3.5rem)", fontWeight: 400, color: "#1a1714", marginBottom: "1.5rem" }}>
-          Book Your Enrollment <em style={{ fontStyle: "italic" }}>Appointment</em>
+      <section className="bg-gold section-padding text-center">
+        <p className="font-montserrat text-[0.65rem] tracking-[0.2em] text-black/50 uppercase mb-[1.2rem]">GET STARTED TODAY</p>
+        <h2 className="font-cormorant text-[clamp(2rem,4vw,3.5rem)] font-normal text-[#1a1714] mb-6">
+          Book Your Enrollment <em className="italic">Appointment</em>
         </h2>
-        <p style={{ fontFamily: "Montserrat, sans-serif", fontSize: "0.8rem", color: "rgba(0,0,0,0.6)", maxWidth: 480, margin: "0 auto 2.5rem", lineHeight: 1.8 }}>
+        <p className="font-montserrat text-[0.8rem] text-black/60 max-w-[480px] mx-auto mb-10 leading-[1.8]">
           Appointments are available Monday through Friday, 9:00 AM – 6:00 PM EST. Contact us to schedule your visit.
         </p>
-        <div style={{ display: "flex", gap: "1rem", justifyContent: "center" }}>
-          <a href="#" className="btn-gold" style={{ background: "#1a1714" }}><Calendar size={14} /> BOOK APPOINTMENT</a>
-          <Link href="/contact" style={{ fontFamily: "Montserrat, sans-serif", fontSize: "0.7rem", letterSpacing: "0.12em", color: "#1a1714", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "0.6rem", border: "1px solid rgba(0,0,0,0.3)", padding: "1rem 1.8rem", fontWeight: 500 }}>CONTACT US</Link>
+        <div className="flex gap-4 justify-center">
+          <a href="#" className="btn-gold bg-[#1a1714]"><Calendar size={14} /> BOOK APPOINTMENT</a>
+          <Link href="/contact" className="font-montserrat text-[0.7rem] tracking-[0.12em] text-[#1a1714] no-underline inline-flex items-center gap-[0.6rem] border border-black/30 px-7 py-4 font-medium">CONTACT US</Link>
         </div>
       </section>
     </>

@@ -1,4 +1,4 @@
-import { Shield, Briefcase, Code2, Cloud, Network, Building2, GraduationCap, ArrowRight } from "lucide-react";
+import { Shield, Briefcase, Code2, Cloud, Network, Building2, GraduationCap } from "lucide-react";
 
 const serviceDetails = [
   {
@@ -56,30 +56,30 @@ export default function Services() {
   return (
     <>
       {/* HERO */}
-      <section style={{ background: "#0e0d0c", paddingTop: 64, minHeight: 360, display: "flex", alignItems: "flex-end", position: "relative" }}>
-        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, #0a0f15 0%, #101820 60%, #0e0d0c 100%)" }} />
-        <div style={{ position: "relative", zIndex: 2, maxWidth: 1200, width: "100%", margin: "0 auto", padding: "5rem 3rem 4rem" }}>
-          <p style={{ fontFamily: "Montserrat, sans-serif", fontSize: "0.65rem", letterSpacing: "0.2em", color: "#9d8553", textTransform: "uppercase", marginBottom: "1rem" }}>OUR CAPABILITIES</p>
-          <h1 style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "clamp(2.5rem, 6vw, 4.5rem)", fontWeight: 400, color: "white", lineHeight: 1.05, marginBottom: "1.5rem" }}>
-            <em style={{ fontStyle: "italic", color: "#9d8553" }}>Services</em> Portfolio
+      <section className="bg-dark pt-16 min-h-[360px] flex items-end relative">
+        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,#0a0f15_0%,#101820_60%,#0e0d0c_100%)]" />
+        <div className="relative z-[2] container-custom pt-20 pb-16">
+          <p className="font-montserrat text-[0.65rem] tracking-[0.2em] text-gold uppercase mb-4">OUR CAPABILITIES</p>
+          <h1 className="font-cormorant text-[clamp(2.5rem,6vw,4.5rem)] font-normal text-white leading-[1.05] mb-6">
+            <em className="italic text-gold">Services</em> Portfolio
           </h1>
-          <p style={{ fontFamily: "Montserrat, sans-serif", fontSize: "0.82rem", color: "rgba(255,255,255,0.6)", maxWidth: 640, lineHeight: 1.85 }}>
+          <p className="font-montserrat text-[0.82rem] text-white/60 max-w-[640px] leading-[1.85]">
             Comprehensive technology solutions spanning software development, cloud computing, infrastructure, government IT, strategic business consulting — and NIN enrollment services for Nigerians.
           </p>
         </div>
       </section>
 
       {/* PROCESS BAND */}
-      <section style={{ background: "#9d8553", padding: "2.5rem 3rem" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "1rem" }}>
-          <h3 style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "1.6rem", fontWeight: 400, color: "#1a1714" }}>
-            Business Process <em style={{ fontStyle: "italic" }}>Reengineering</em>
+      <section className="bg-gold px-12 py-10">
+        <div className="container-custom p-0 flex items-center justify-between flex-wrap gap-4">
+          <h3 className="font-cormorant text-[1.6rem] font-normal text-[#1a1714]">
+            Business Process <em className="italic">Reengineering</em>
           </h3>
-          <div style={{ display: "flex", gap: "2rem" }}>
+          <div className="flex gap-8">
             {["Analysis", "Design", "Development", "Implementation", "Evaluation"].map((step, i) => (
-              <div key={step} style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                <span style={{ fontFamily: "Montserrat, sans-serif", fontSize: "0.6rem", color: "rgba(0,0,0,0.5)", fontWeight: 500 }}>0{i + 1}</span>
-                <span style={{ fontFamily: "Montserrat, sans-serif", fontSize: "0.72rem", color: "#1a1714", fontWeight: 500 }}>{step}</span>
+              <div key={step} className="flex items-center gap-2">
+                <span className="font-montserrat text-[0.6rem] text-black/50 font-medium">0{i + 1}</span>
+                <span className="font-montserrat text-[0.72rem] text-[#1a1714] font-medium">{step}</span>
               </div>
             ))}
           </div>
@@ -87,28 +87,28 @@ export default function Services() {
       </section>
 
       {/* SERVICE LISTINGS */}
-      <section style={{ background: "#f2ede6", padding: "6rem 3rem" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", display: "flex", flexDirection: "column", gap: "5rem" }}>
+      <section className="bg-cream section-padding pt-24 pb-24">
+        <div className="container-custom p-0 flex flex-col gap-20">
           {serviceDetails.map((svc, i) => {
             const Icon = svc.icon;
             return (
-              <div key={i} style={{ display: "grid", gridTemplateColumns: svc.image ? "1fr 1fr" : "1fr", gap: "4rem", paddingBottom: "5rem", borderBottom: i < serviceDetails.length - 1 ? "1px solid rgba(0,0,0,0.1)" : "none" }}>
+              <div key={i} className={`grid ${svc.image ? "grid-cols-2" : "grid-cols-1"} gap-16 pb-20 ${i < serviceDetails.length - 1 ? "border-b border-black/10" : "border-none"}`}>
                 <div>
-                  <Icon size={22} color="#9d8553" style={{ marginBottom: "1.25rem" }} />
-                  <h2 style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "2rem", fontWeight: 400, color: "#1a1714", marginBottom: "1.25rem" }}>{svc.title}</h2>
-                  <p style={{ fontFamily: "Montserrat, sans-serif", fontSize: "0.8rem", color: "#7a6a55", lineHeight: 1.9, marginBottom: "1.5rem" }}>{svc.description}</p>
-                  <ul style={{ listStyle: "none" }}>
+                  <Icon size={22} className="text-gold mb-5" />
+                  <h2 className="font-cormorant text-[2rem] font-normal text-[#1a1714] mb-5">{svc.title}</h2>
+                  <p className="font-montserrat text-[0.8rem] text-[#7a6a55] leading-[1.9] mb-6">{svc.description}</p>
+                  <ul className="list-none">
                     {svc.bullets.map((b) => (
-                      <li key={b} style={{ display: "flex", gap: "0.75rem", alignItems: "flex-start", marginBottom: "0.6rem", fontFamily: "Montserrat, sans-serif", fontSize: "0.75rem", color: "#9d8553" }}>
-                        <span style={{ marginTop: 3, flexShrink: 0, fontSize: "0.5rem" }}>●</span><span>{b}</span>
+                      <li key={b} className="flex gap-3 items-start mb-2 font-montserrat text-[0.75rem] text-gold">
+                        <span className="mt-[3px] flex-shrink-0 text-[0.5rem]">●</span><span>{b}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
                 {svc.image && (
-                  <div style={{ background: "linear-gradient(140deg, #1a2535 0%, #0d1522 60%, #121a24 100%)", position: "relative", overflow: "hidden", minHeight: 320 }}>
-                    <div style={{ position: "absolute", inset: 0, backgroundImage: "linear-gradient(0deg, rgba(157,133,83,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(157,133,83,0.06) 1px, transparent 1px)", backgroundSize: "30px 30px" }} />
-                    <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "40%", background: "linear-gradient(to top, rgba(157,133,83,0.1), transparent)" }} />
+                  <div className="bg-[linear-gradient(140deg,#1a2535_0%,#0d1522_60%,#121a24_100%)] relative overflow-hidden min-h-[320px]">
+                    <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(157,133,83,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(157,133,83,0.06)_1px,transparent_1px)] bg-[length:30px_30px]" />
+                    <div className="absolute bottom-0 left-0 right-0 h-[40%] bg-[linear-gradient(to_top,rgba(157,133,83,0.1),transparent)]" />
                   </div>
                 )}
               </div>

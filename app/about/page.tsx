@@ -4,34 +4,34 @@ export default function About() {
   return (
     <>
       {/* HERO */}
-      <section style={{ position: "relative", paddingTop: 64, background: "#0e0d0c", minHeight: 420, display: "flex", alignItems: "flex-end" }}>
-        <div style={{ position: "absolute", inset: 0, backgroundImage: "repeating-linear-gradient(90deg, rgba(30,40,60,0.3) 0px, rgba(30,40,60,0.3) 2px, transparent 2px, transparent 80px), repeating-linear-gradient(0deg, rgba(30,40,60,0.15) 0px, rgba(30,40,60,0.15) 1px, transparent 1px, transparent 60px)" }} />
-        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, #0a0f15 0%, #101820 60%, #0e0d0c 100%)" }} />
-        <div style={{ position: "relative", zIndex: 2, maxWidth: 1200, width: "100%", margin: "0 auto", padding: "5rem 3rem 4rem" }}>
-          <p style={{ fontFamily: "Montserrat, sans-serif", fontSize: "0.65rem", letterSpacing: "0.2em", color: "#9d8553", textTransform: "uppercase", marginBottom: "1.2rem" }}>ABOUT US</p>
-          <h1 style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "clamp(3rem, 6vw, 5rem)", fontWeight: 400, color: "white", lineHeight: 1.05 }}>
-            Our <em style={{ fontStyle: "italic", color: "#9d8553" }}>Legacy</em>
+      <section className="relative pt-16 bg-dark min-h-[420px] flex items-end">
+        <div className="absolute inset-0 bg-[repeating-linear-gradient(90deg,rgba(30,40,60,0.3)_0px,rgba(30,40,60,0.3)_2px,transparent_2px,transparent_80px),repeating-linear-gradient(0deg,rgba(30,40,60,0.15)_0px,rgba(30,40,60,0.15)_1px,transparent_1px,transparent_60px)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,#0a0f15_0%,#101820_60%,#0e0d0c_100%)]" />
+        <div className="relative z-[2] container-custom pt-20 pb-16">
+          <p className="font-montserrat text-[0.65rem] tracking-[0.2em] text-gold uppercase mb-[1.2rem]">ABOUT US</p>
+          <h1 className="font-cormorant text-[clamp(3rem,6vw,5rem)] font-normal text-white leading-[1.05]">
+            Our <em className="italic text-gold">Legacy</em>
           </h1>
         </div>
       </section>
 
       {/* OUR STORY */}
-      <section style={{ background: "#f2ede6", padding: "8rem 3rem" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "6rem" }}>
+      <section className="bg-cream section-padding pt-32 pb-32">
+        <div className="container-custom p-0 grid grid-cols-2 gap-24">
           <div>
-            <p style={{ fontFamily: "Montserrat, sans-serif", fontSize: "0.65rem", letterSpacing: "0.2em", color: "#9d8553", textTransform: "uppercase", marginBottom: "1.2rem" }}>OUR STORY</p>
-            <h2 style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 400, color: "#1a1714", lineHeight: 1.15 }}>
-              Three Decades of<br /><em style={{ fontStyle: "italic" }}>Innovation</em>
+            <p className="font-montserrat text-[0.65rem] tracking-[0.2em] text-gold uppercase mb-[1.2rem]">OUR STORY</p>
+            <h2 className="font-cormorant text-[clamp(2rem,4vw,3rem)] font-normal text-[#1a1714] leading-[1.15]">
+              Three Decades of<br /><em className="italic">Innovation</em>
             </h2>
           </div>
           <div>
-            <p style={{ fontFamily: "Montserrat, sans-serif", fontSize: "0.8rem", color: "#7a6a55", lineHeight: 1.9, marginBottom: "1.5rem" }}>
+            <p className="font-montserrat text-[0.8rem] text-[#7a6a55] leading-[1.9] mb-6">
               Established in 1994, Lagos Analysis Corporation (LANCOR) is a privately held company headquartered in Newton, Massachusetts, United States. LANCOR is a professional consulting, research, and development services firm; offering strategic process reengineering solutions to private and public sector clients around the world.
             </p>
-            <p style={{ fontFamily: "Montserrat, sans-serif", fontSize: "0.8rem", color: "#7a6a55", lineHeight: 1.9, marginBottom: "1.5rem" }}>
+            <p className="font-montserrat text-[0.8rem] text-[#7a6a55] leading-[1.9] mb-6">
               Our emphasis is on precision, excellence, performance, and service. Our stock in trade is innovative solutions guided by over 20+ years of experience in using process reengineering and collaborating with industry-specific experts.
             </p>
-            <p style={{ fontFamily: "Montserrat, sans-serif", fontSize: "0.8rem", color: "#7a6a55", lineHeight: 1.9 }}>
+            <p className="font-montserrat text-[0.8rem] text-[#7a6a55] leading-[1.9]">
               We have consistently enabled our clients in various industries, through collaboration with specific industry experts, to achieve substantial improvements in their operations, successful completion of projects within budget, improved operating margins, and enhanced competitiveness.
             </p>
           </div>
@@ -39,13 +39,13 @@ export default function About() {
       </section>
 
       {/* CORE VALUES */}
-      <section style={{ background: "#0e0d0c", padding: "7rem 3rem" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-          <p style={{ fontFamily: "Montserrat, sans-serif", fontSize: "0.65rem", letterSpacing: "0.2em", color: "#9d8553", textTransform: "uppercase", marginBottom: "1.2rem" }}>CORE VALUES</p>
-          <h2 style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "clamp(2.5rem, 5vw, 4rem)", fontWeight: 400, color: "white", marginBottom: "4rem" }}>
-            Our <em style={{ fontStyle: "italic", color: "#9d8553" }}>Pillars</em>
+      <section className="bg-dark section-padding">
+        <div className="container-custom p-0">
+          <p className="font-montserrat text-[0.65rem] tracking-[0.2em] text-gold uppercase mb-[1.2rem]">CORE VALUES</p>
+          <h2 className="font-cormorant text-[clamp(2.5rem,5vw,4rem)] font-normal text-white mb-16">
+            Our <em className="italic text-gold">Pillars</em>
           </h2>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", borderTop: "1px solid rgba(157,133,83,0.2)" }}>
+          <div className="grid grid-cols-4 border-t border-gold/20">
             {[
               { icon: Target, title: "Precision", desc: "Every solution is engineered with meticulous attention to detail." },
               { icon: Award, title: "Excellence", desc: "We set the bar high and consistently exceed expectations." },
@@ -54,10 +54,10 @@ export default function About() {
             ].map((v, i) => {
               const Icon = v.icon;
               return (
-                <div key={i} style={{ padding: "2.5rem 2rem", borderRight: i < 3 ? "1px solid rgba(157,133,83,0.15)" : "none" }}>
-                  <Icon size={22} color="#9d8553" style={{ marginBottom: "1.25rem" }} />
-                  <h3 style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "1.4rem", fontWeight: 400, color: "white", marginBottom: "0.9rem" }}>{v.title}</h3>
-                  <p style={{ fontFamily: "Montserrat, sans-serif", fontSize: "0.75rem", color: "rgba(255,255,255,0.5)", lineHeight: 1.8 }}>{v.desc}</p>
+                <div key={i} className={`py-10 px-8 ${i < 3 ? "border-r border-gold/15" : "border-none"}`}>
+                  <Icon size={22} className="text-gold mb-5" />
+                  <h3 className="font-cormorant text-[1.4rem] font-normal text-white mb-[0.9rem]">{v.title}</h3>
+                  <p className="font-montserrat text-[0.75rem] text-white/50 leading-[1.8]">{v.desc}</p>
                 </div>
               );
             })}
@@ -66,11 +66,11 @@ export default function About() {
       </section>
 
       {/* LEADERSHIP */}
-      <section style={{ background: "#f2ede6", padding: "7rem 3rem" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-          <p style={{ fontFamily: "Montserrat, sans-serif", fontSize: "0.65rem", letterSpacing: "0.2em", color: "#9d8553", textTransform: "uppercase", marginBottom: "1.2rem" }}>EXECUTIVE OFFICERS</p>
-          <h2 style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "clamp(2.5rem, 5vw, 4rem)", fontWeight: 400, color: "#1a1714", fontStyle: "italic", marginBottom: "4rem" }}>Leadership</h2>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "2rem" }}>
+      <section className="bg-cream section-padding">
+        <div className="container-custom p-0">
+          <p className="font-montserrat text-[0.65rem] tracking-[0.2em] text-gold uppercase mb-[1.2rem]">EXECUTIVE OFFICERS</p>
+          <h2 className="font-cormorant text-[clamp(2.5rem,5vw,4rem)] font-normal text-[#1a1714] italic mb-16">Leadership</h2>
+          <div className="grid grid-cols-2 gap-8">
             {[
               {
                 init: "A",
@@ -85,13 +85,13 @@ export default function About() {
                 bio: "A proven principal with 30+ years of experience in designing, deploying, migrating, and supporting critical multi-site data centers. Specializes in Security Systems, Systems Integration, Network Engineering, and Cloud Computing. Expert at leading complex multistage projects through their full lifecycle.",
               },
             ].map((p) => (
-              <div key={p.name} style={{ border: "1px solid rgba(0,0,0,0.1)", padding: "2.5rem" }}>
-                <div style={{ width: 52, height: 52, background: "rgba(157,133,83,0.15)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "1.5rem" }}>
-                  <span style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "1.4rem", color: "#9d8553" }}>{p.init}</span>
+              <div key={p.name} className="border border-black/10 p-10">
+                <div className="w-[52px] h-[52px] bg-gold/15 flex items-center justify-center mb-6">
+                  <span className="font-cormorant text-[1.4rem] text-gold">{p.init}</span>
                 </div>
-                <h3 style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "1.5rem", fontWeight: 400, color: "#1a1714", marginBottom: "0.4rem" }}>{p.name}</h3>
-                <p style={{ fontFamily: "Montserrat, sans-serif", fontSize: "0.6rem", letterSpacing: "0.15em", color: "#9d8553", marginBottom: "1.25rem" }}>{p.title}</p>
-                <p style={{ fontFamily: "Montserrat, sans-serif", fontSize: "0.78rem", color: "#7a6a55", lineHeight: 1.85 }}>{p.bio}</p>
+                <h3 className="font-cormorant text-[1.5rem] font-normal text-[#1a1714] mb-[0.4rem]">{p.name}</h3>
+                <p className="font-montserrat text-[0.6rem] tracking-[0.15em] text-gold mb-5">{p.title}</p>
+                <p className="font-montserrat text-[0.78rem] text-[#7a6a55] leading-[1.85]">{p.bio}</p>
               </div>
             ))}
           </div>

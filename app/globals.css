@@ -1,37 +1,54 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Cormorant:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap');
 @import "tailwindcss";
 
-:root {
-  --gold: #9d8553;
-  --gold-light: #b8976a;
-  --gold-dark: #7a6540;
-  --cream: #f2ede6;
-  --dark: #0e0d0c;
-  --dark-mid: #1a1816;
-  --text-muted: #8a7d6e;
+@theme {
+  --color-gold: #9d8553;
+  --color-gold-light: #b8976a;
+  --color-gold-dark: #7a6540;
+  --color-cream: #f2ede6;
+  --color-dark: #0e0d0c;
+  --color-dark-mid: #1a1816;
+  --color-text-muted: #8a7d6e;
+
+  --font-montserrat: 'Montserrat', sans-serif;
+  --font-cormorant: 'Cormorant Garamond', serif;
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body {
-  font-family: 'Montserrat', sans-serif;
-  background: var(--dark);
-  color: white;
-  font-weight: 300;
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: var(--font-montserrat);
+    background-color: var(--color-dark);
+    color: white;
+    font-weight: 300;
+  }
+  input, textarea, select {
+    outline: none;
+  }
+  input::placeholder, textarea::placeholder {
+    color: #6b6055;
+  }
 }
 
-.label-text {
-  font-family: 'Montserrat', sans-serif;
+@utility label-text {
+  font-family: var(--font-montserrat);
   font-size: 0.65rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   font-weight: 400;
 }
 
-.btn-gold {
-  background-color: var(--gold);
+@utility btn-gold {
+  background-color: var(--color-gold);
   color: white;
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-montserrat);
   font-size: 0.7rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -44,13 +61,16 @@ body {
   cursor: pointer;
   border: none;
   text-decoration: none;
-}
-.btn-gold:hover { background-color: var(--gold-dark); }
 
-.btn-outline {
+  &:hover {
+    background-color: var(--color-gold-dark);
+  }
+}
+
+@utility btn-outline {
   background: transparent;
   color: white;
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-montserrat);
   font-size: 0.7rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -59,12 +79,51 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  border: 1px solid rgba(255,255,255,0.4);
+  border: 1px solid rgba(255, 255, 255, 0.4);
   transition: all 0.2s;
   cursor: pointer;
   text-decoration: none;
-}
-.btn-outline:hover { border-color: white; }
 
-input, textarea, select { outline: none; }
-input::placeholder, textarea::placeholder { color: #6b6055; }
+  &:hover {
+    border-color: white;
+  }
+}
+
+@utility container-custom {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+@utility section-padding {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+@utility h1-hero {
+  font-family: var(--font-cormorant);
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-weight: 400;
+  line-height: 1.05;
+  color: white;
+  margin-bottom: 0;
+}
+
+@utility h2-section {
+  font-family: var(--font-cormorant);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 400;
+  line-height: 1.1;
+  margin-bottom: 4rem;
+}
+
+@utility h3-card {
+  font-family: var(--font-cormorant);
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin-bottom: 0.9rem;
+}
