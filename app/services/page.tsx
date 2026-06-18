@@ -1,4 +1,4 @@
-import { Shield, Briefcase, Code2, Cloud, Network, Building2, GraduationCap, ArrowRight } from "lucide-react";
+import { Shield, Briefcase, Code2, Cloud, Network, Building2, GraduationCap } from "lucide-react";
 
 const serviceDetails = [
   {
