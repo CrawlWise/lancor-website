@@ -31,7 +31,7 @@ export default function Contact() {
                 { icon: MapPin, label: "HEADQUARTERS", val: "2000 Commonwealth Avenue, Suite 310\nNewton Auburndale, MA 02466 USA" },
                 { icon: Phone, label: "TELEPHONE", val: "+1.617.431.6200" },
                 { icon: Printer, label: "FAX", val: "+1.617.939.3900" },
-                { icon: Mail, label: "EMAIL", val: "Oyegbola@lancorltd.com" },
+                { icon: Mail, label: "EMAIL", val: "info@lancorltd.com" },
                 { icon: Clock, label: "BUSINESS HOURS", val: "Mon–Fri: 9:00 AM – 6:00 PM EST" },
               ].map((item) => {
                 const Icon = item.icon;
@@ -48,12 +48,12 @@ export default function Contact() {
                 );
               })}
             </div>
-            <div>
+            {/* <div>
               <a href="https://calendly.com/iqid_usa/boston" target="_blank" className="btn-gold inline-flex no-underline mb-3">
                 <Calendar size={14} /> BOOK A MEETING
               </a>
               <p className="font-montserrat text-[0.65rem] text-[#9d8553] tracking-[0.05em] mt-2">Schedule a free consultation via Calendly</p>
-            </div>
+            </div> */}
 
             {/* Registration box */}
             <div className="border border-[rgba(0,0,0,0.1)] p-6 mt-8">

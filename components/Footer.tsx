@@ -75,7 +75,7 @@ export default function Footer() {
               </div>
               <div className="flex gap-3 items-center">
                 <Mail size={14} color="#9d8553" className="shrink-0" />
-                <span className="font-montserrat text-[0.75rem] text-[rgba(255,255,255,0.6)]">Oyegbola@lancorltd.com</span>
+                <span className="font-montserrat text-[0.75rem] text-[rgba(255,255,255,0.6)]">info@lancorltd.com</span>
               </div>
             </div>
           </div>
