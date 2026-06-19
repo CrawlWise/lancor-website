@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const navLinks = [
@@ -20,25 +21,14 @@ export default function Navbar() {
       {/* Logo */}
       <Link href="/" className="flex items-center gap-3 no-underline">
         <div
-          className="w-9 h-9 border border-[#9d8553] flex items-center justify-center shrink-0"
+          className="w-full h-9 flex items-center justify-center shrink-0"
         >
-          <span
-            className="font-['Cormorant_Garamond,serif'] text-[1.1rem] text-[#9d8553] font-normal"
-          >
-            L
-          </span>
-        </div>
-        <div>
-          <div
-            className="font-montserrat text-[0.95rem] font-semibold text-white tracking-widest"
-          >
-            LANCOR
-          </div>
-          <div
-            className="font-montserrat text-[0.55rem] text-[#9d8553] tracking-[0.2em]"
-          >
-            EST. 1994
-          </div>
+          <Image
+            src="/logo.png"
+            alt="Lancor Logo"
+            width={100}
+            height={50}
+          />
         </div>
       </Link>
 

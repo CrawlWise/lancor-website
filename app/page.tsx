@@ -198,12 +198,9 @@ export default function Home() {
               ))}
             </div>
             <div className="flex gap-4">
-              <Link href="/nin-enrollment" className="btn-dark bg-[#1a1714] no-underline">
+              <a href="https://calendly.com/iqid_usa/boston" target="_blank" className="btn-dark bg-[#1a1714] no-underline">
                 <Calendar size={14} /> BOOK APPOINTMENT
-              </Link>
-              <Link href="/nin-enrollment" className="font-montserrat text-[0.7rem] tracking-[0.12em] text-[#1a1714] no-underline inline-flex items-center gap-[0.6rem] border border-[rgba(0,0,0,0.3)] px-6 py-4 font-medium">
-                LEARN MORE <ArrowRight size={14} />
-              </Link>
+              </a>
             </div>
           </div>
         </div>

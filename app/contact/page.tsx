@@ -49,7 +49,7 @@ export default function Contact() {
               })}
             </div>
             <div>
-              <a href="#" className="btn-gold inline-flex no-underline mb-3">
+              <a href="https://calendly.com/iqid_usa/boston" target="_blank" className="btn-gold inline-flex no-underline mb-3">
                 <Calendar size={14} /> BOOK A MEETING
               </a>
               <p className="font-montserrat text-[0.65rem] text-[#9d8553] tracking-[0.05em] mt-2">Schedule a free consultation via Calendly</p>
@@ -103,4 +103,4 @@ export default function Contact() {
       </section>
     </>
   );
-}
+}                                                                                                                                                                                                                                                 

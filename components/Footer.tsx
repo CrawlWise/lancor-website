@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Phone, Mail, MapPin } from "lucide-react";
 
 export default function Footer() {
@@ -9,10 +10,12 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-9 h-9 border border-[#9d8553] flex items-center justify-center">
-                <span className="font-cormorant text-[1.1rem] text-[#9d8553]">L</span>
-              </div>
-              <span className="font-montserrat text-[0.9rem] font-semibold text-white tracking-widest">LANCOR</span>
+              <Image
+                src="/logo.png"
+                alt="Lancor Logo"
+                width={100}
+                height={50}
+              />
             </div>
             <p className="font-montserrat text-[0.78rem] text-[rgba(255,255,255,0.5)] leading-[1.8] mb-6">
               Dynamic Technology Solutions Provider. Precision, Excellence, Performance, and Service since 1994.
