@@ -110,8 +110,8 @@ export default function NINEnrollment() {
               { step: "02", title: "Prepare Your Documents", desc: "Bring a valid International passport, birth certificate, and NPC Digitized Certificate to your appointment." },
               { step: "03", title: "Visit Our Center", desc: "Come to our Newton, MA office at your scheduled time. Arrive on time - appointments run efficiently with minimal wait." },
               { step: "04", title: "Receive Your NIN", desc: "Your National Identification Number is issued by NIMC. We facilitate the process securely and professionally." },
-            ].map((s) => (
-              <div key={s.step} className="pt-8 border-t border-[rgba(157,133,83,0.3)]">
+            ].map((s, index, arr) => (
+            <div key={s.step} className={`pt-8 ${index < arr.length - 1 ? "border-r mr-4":""} border-[rgba(157,133,83,0.3)]`}>
                 <div className="font-cormorant text-[2.5rem] text-[rgba(157,133,83,0.3)] leading-none mb-5">{s.step}</div>
                 <h3 className="font-cormorant text-[1.3rem] font-normal text-white mb-3">{s.title}</h3>
                 <p className="font-montserrat text-[0.75rem] text-[rgba(255,255,255,0.5)] leading-[1.8]">{s.desc}</p>
