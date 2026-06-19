@@ -8,25 +8,25 @@ export default function Contact() {
   return (
     <>
       {/* HERO */}
-      <section style={{ background: "#0e0d0c", paddingTop: 64, minHeight: 220, display: "flex", alignItems: "flex-end" }}>
-        <div style={{ position: "absolute", left: 0, right: 0, top: 0, height: 284, background: "linear-gradient(to bottom, #0a0e14 0%, #0e0d0c 100%)" }} />
-        <div style={{ position: "relative", zIndex: 2, maxWidth: 1200, width: "100%", margin: "0 auto", padding: "4rem 3rem 3rem" }}>
-          <h1 style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "clamp(2.5rem, 6vw, 4.5rem)", fontWeight: 400, color: "white", lineHeight: 1.05 }}>
-            Contact <em style={{ fontStyle: "italic", color: "#9d8553" }}>Us</em>
+      <section className="bg-[#0e0d0c] pt-16 min-h-[220px] flex items-end">
+        <div className="absolute left-0 right-0 top-0 h-[284px] bg-[linear-gradient(to_bottom,#0a0e14_0%,#0e0d0c_100%)]" />
+        <div className="relative z-[2] max-w-[1200px] w-full mx-auto px-[3rem] pt-[4rem] pb-[3rem]">
+          <h1 className="font-cormorant text-[clamp(2.5rem,6vw,4.5rem)] font-normal text-white leading-[1.05]">
+            Contact <em className="italic text-[#9d8553]">Us</em>
           </h1>
         </div>
       </section>
 
       {/* MAIN CONTACT */}
-      <section style={{ background: "#f2ede6", padding: "7rem 3rem" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5rem", alignItems: "start" }}>
+      <section className="bg-[#f2ede6] py-[7rem] px-[3rem]">
+        <div className="max-w-[1200px] mx-auto grid grid-cols-2 gap-[5rem] items-start">
           {/* Info */}
           <div>
-            <p style={{ fontFamily: "Montserrat, sans-serif", fontSize: "0.65rem", letterSpacing: "0.2em", color: "#9d8553", textTransform: "uppercase", marginBottom: "1.2rem" }}>CONTACT INFORMATION</p>
-            <h2 style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 400, color: "#1a1714", lineHeight: 1.15, marginBottom: "2.5rem" }}>
-              Let&apos;s Start a <em style={{ fontStyle: "italic" }}>Conversation</em>
+            <p className="font-montserrat text-[0.65rem] tracking-[0.2em] text-[#9d8553] uppercase mb-[1.2rem]">CONTACT INFORMATION</p>
+            <h2 className="font-cormorant text-[clamp(2rem,4vw,3rem)] font-normal text-[#1a1714] leading-[1.15] mb-[2.5rem]">
+              Let&apos;s Start a <em className="italic">Conversation</em>
             </h2>
-            <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem", marginBottom: "2.5rem" }}>
+            <div className="flex flex-col gap-6 mb-[2.5rem]">
               {[
                 { icon: MapPin, label: "HEADQUARTERS", val: "2000 Commonwealth Avenue, Suite 310\nNewton Auburndale, MA 02466 USA" },
                 { icon: Phone, label: "TELEPHONE", val: "+1.617.431.6200" },
@@ -36,51 +36,51 @@ export default function Contact() {
               ].map((item) => {
                 const Icon = item.icon;
                 return (
-                  <div key={item.label} style={{ display: "flex", gap: "1rem", alignItems: "flex-start" }}>
-                    <div style={{ width: 40, height: 40, border: "1px solid rgba(0,0,0,0.12)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                  <div key={item.label} className="flex gap-4 items-start">
+                    <div className="w-10 h-10 border border-[rgba(0,0,0,0.12)] flex items-center justify-center shrink-0">
                       <Icon size={16} color="#9d8553" />
                     </div>
                     <div>
-                      <p style={{ fontFamily: "Montserrat, sans-serif", fontSize: "0.55rem", letterSpacing: "0.18em", color: "#9d8553", marginBottom: "0.3rem" }}>{item.label}</p>
-                      <p style={{ fontFamily: "Montserrat, sans-serif", fontSize: "0.78rem", color: "#5a4a38", lineHeight: 1.7, whiteSpace: "pre-line" }}>{item.val}</p>
+                      <p className="font-montserrat text-[0.55rem] tracking-[0.18em] text-[#9d8553] mb-[0.3rem]">{item.label}</p>
+                      <p className="font-montserrat text-[0.78rem] text-[#5a4a38] leading-[1.7] whitespace-pre-line">{item.val}</p>
                     </div>
                   </div>
                 );
               })}
             </div>
             <div>
-              <a href="#" className="btn-gold" style={{ display: "inline-flex", textDecoration: "none", marginBottom: "0.75rem" }}>
+              <a href="https://calendly.com/iqid_usa/boston" target="_blank" className="btn-gold inline-flex no-underline mb-3">
                 <Calendar size={14} /> BOOK A MEETING
               </a>
-              <p style={{ fontFamily: "Montserrat, sans-serif", fontSize: "0.65rem", color: "#9d8553", letterSpacing: "0.05em", marginTop: "0.5rem" }}>Schedule a free consultation via Calendly</p>
+              <p className="font-montserrat text-[0.65rem] text-[#9d8553] tracking-[0.05em] mt-2">Schedule a free consultation via Calendly</p>
             </div>
 
             {/* Registration box */}
-            <div style={{ border: "1px solid rgba(0,0,0,0.1)", padding: "1.5rem", marginTop: "2rem" }}>
-              <p style={{ fontFamily: "Montserrat, sans-serif", fontSize: "0.55rem", letterSpacing: "0.18em", color: "#9d8553", marginBottom: "1rem" }}>REGISTRATIONS</p>
-              <p style={{ fontFamily: "Montserrat, sans-serif", fontSize: "0.7rem", color: "#7a6a55", marginBottom: "0.4rem" }}>D-U-N-S # 009498669</p>
-              <p style={{ fontFamily: "Montserrat, sans-serif", fontSize: "0.7rem", color: "#7a6a55" }}>UNGM Registration # 104496</p>
+            <div className="border border-[rgba(0,0,0,0.1)] p-6 mt-8">
+              <p className="font-montserrat text-[0.55rem] tracking-[0.18em] text-[#9d8553] mb-4">REGISTRATIONS</p>
+              <p className="font-montserrat text-[0.7rem] text-[#7a6a55] mb-[0.4rem]">D-U-N-S # 009498669</p>
+              <p className="font-montserrat text-[0.7rem] text-[#7a6a55]">UNGM Registration # 104496</p>
             </div>
           </div>
 
           {/* Form */}
-          <div style={{ background: "#1a1714", padding: "2.5rem" }}>
-            <h3 style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "1.8rem", fontWeight: 400, color: "white", marginBottom: "2rem" }}>Send a Message</h3>
-            <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
+          <div className="bg-[#1a1714] p-[2.5rem]">
+            <h3 className="font-cormorant text-[1.8rem] font-normal text-white mb-8">Send a Message</h3>
+            <div className="flex flex-col gap-5">
               <div>
-                <label style={{ fontFamily: "Montserrat, sans-serif", fontSize: "0.55rem", letterSpacing: "0.18em", color: "rgba(255,255,255,0.4)", display: "block", marginBottom: "0.5rem" }}>FULL NAME</label>
+                <label className="font-montserrat text-[0.55rem] tracking-[0.18em] text-[rgba(255,255,255,0.4)] block mb-2">FULL NAME</label>
                 <input type="text" placeholder="Your name" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })}
-                  style={{ width: "100%", background: "transparent", border: "1px solid rgba(255,255,255,0.15)", padding: "0.85rem 1rem", fontFamily: "Montserrat, sans-serif", fontSize: "0.8rem", color: "white" }} />
+                  className="w-full bg-transparent border border-[rgba(255,255,255,0.15)] px-4 py-[0.85rem] font-montserrat text-[0.8rem] text-white" />
               </div>
               <div>
-                <label style={{ fontFamily: "Montserrat, sans-serif", fontSize: "0.55rem", letterSpacing: "0.18em", color: "rgba(255,255,255,0.4)", display: "block", marginBottom: "0.5rem" }}>EMAIL ADDRESS</label>
+                <label className="font-montserrat text-[0.55rem] tracking-[0.18em] text-[rgba(255,255,255,0.4)] block mb-2">EMAIL ADDRESS</label>
                 <input type="email" placeholder="your@email.com" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })}
-                  style={{ width: "100%", background: "transparent", border: "1px solid rgba(255,255,255,0.15)", padding: "0.85rem 1rem", fontFamily: "Montserrat, sans-serif", fontSize: "0.8rem", color: "white" }} />
+                  className="w-full bg-transparent border border-[rgba(255,255,255,0.15)] px-4 py-[0.85rem] font-montserrat text-[0.8rem] text-white" />
               </div>
               <div>
-                <label style={{ fontFamily: "Montserrat, sans-serif", fontSize: "0.55rem", letterSpacing: "0.18em", color: "rgba(255,255,255,0.4)", display: "block", marginBottom: "0.5rem" }}>SUBJECT</label>
+                <label className="font-montserrat text-[0.55rem] tracking-[0.18em] text-[rgba(255,255,255,0.4)] block mb-2">SUBJECT</label>
                 <select value={form.subject} onChange={(e) => setForm({ ...form, subject: e.target.value })}
-                  style={{ width: "100%", background: "#1a1714", border: "1px solid rgba(255,255,255,0.15)", padding: "0.85rem 1rem", fontFamily: "Montserrat, sans-serif", fontSize: "0.8rem", color: form.subject ? "white" : "#6b6055", appearance: "none" }}>
+                  className={`w-full bg-[#1a1714] border border-[rgba(255,255,255,0.15)] px-4 py-[0.85rem] font-montserrat text-[0.8rem] appearance-none ${form.subject ? "text-white" : "text-[#6b6055]"}`}>
                   <option value="">Select a topic</option>
                   <option value="consulting">Business Consulting</option>
                   <option value="software">Software Development</option>
@@ -90,11 +90,11 @@ export default function Contact() {
                 </select>
               </div>
               <div>
-                <label style={{ fontFamily: "Montserrat, sans-serif", fontSize: "0.55rem", letterSpacing: "0.18em", color: "rgba(255,255,255,0.4)", display: "block", marginBottom: "0.5rem" }}>MESSAGE</label>
+                <label className="font-montserrat text-[0.55rem] tracking-[0.18em] text-[rgba(255,255,255,0.4)] block mb-2">MESSAGE</label>
                 <textarea placeholder="Tell us about your project or inquiry..." rows={5} value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })}
-                  style={{ width: "100%", background: "transparent", border: "1px solid rgba(255,255,255,0.15)", padding: "0.85rem 1rem", fontFamily: "Montserrat, sans-serif", fontSize: "0.8rem", color: "white", resize: "vertical" }} />
+                  className="w-full bg-transparent border border-[rgba(255,255,255,0.15)] px-4 py-[0.85rem] font-montserrat text-[0.8rem] text-white resize-y" />
               </div>
-              <button type="button" className="btn-gold" style={{ width: "100%", justifyContent: "center", marginTop: "0.5rem" }}>
+              <button type="button" className="btn-gold w-full justify-center mt-2">
                 <Send size={14} /> SEND MESSAGE
               </button>
             </div>
@@ -103,4 +103,4 @@ export default function Contact() {
       </section>
     </>
   );
-}
+}                                                                                                                                                                                                                                                 

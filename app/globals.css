@@ -11,7 +11,14 @@
   --text-muted: #8a7d6e;
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
+@theme {
+  --font-montserrat: "Montserrat", sans-serif;
+  --font-cormorant: "Cormorant Garamond", serif;
+}
+
+* { 
+    box-sizing: border-box; 
+  }
 html { scroll-behavior: smooth; }
 body {
   font-family: 'Montserrat', sans-serif;
@@ -30,6 +37,24 @@ body {
 
 .btn-gold {
   background-color: var(--gold);
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 1rem 2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.2s;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+}
+
+.btn-dark {
+  background-color: var(--dark);
   color: white;
   font-family: 'Montserrat', sans-serif;
   font-size: 0.7rem;
