@@ -64,7 +64,7 @@ export default function Contact() {
           </div>
 
           {/* Form */}
-          <div className="bg-[#1a1714] p-[2.5rem]">
+          {/* <div className="bg-[#1a1714] p-[2.5rem]">
             <h3 className="font-cormorant text-[1.8rem] font-normal text-white mb-8">Send a Message</h3>
             <div className="flex flex-col gap-5">
               <div>
@@ -98,7 +98,7 @@ export default function Contact() {
                 <Send size={14} /> SEND MESSAGE
               </button>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
     </>
