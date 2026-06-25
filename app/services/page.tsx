@@ -1,6 +1,8 @@
 import { Shield, ShieldCheck, Briefcase, Code2, Cloud, Network, Building2, GraduationCap, ArrowRight } from "lucide-react";
 import type { Metadata } from "next";
 import Image from "next/image";
+import AnimateIn from "@/components/AnimateIn";
+
 
 export const metadata: Metadata = {
   title: "Services",
@@ -92,19 +94,21 @@ export default function Services() {
       <section className="bg-[#0e0d0c] pt-16 min-h-[360px] flex items-end relative">
         <div className="absolute inset-0 bg-[linear-gradient(to_bottom,#0a0f15_0%,#101820_60%,#0e0d0c_100%)]" />
         <div className="relative z-[2] max-w-[1200px] w-full mx-auto px-[3rem] pt-[5rem] pb-[4rem]">
-          <p className="font-montserrat text-[0.65rem] tracking-[0.2em] text-[#9d8553] uppercase mb-4">OUR CAPABILITIES</p>
-          <h1 className="font-cormorant text-[clamp(2.5rem,6vw,4.5rem)] font-normal text-white leading-[1.05] mb-6">
-            <em className="italic text-[#9d8553]">Services</em> Portfolio
-          </h1>
-          <p className="font-montserrat text-[0.82rem] text-[rgba(255,255,255,0.6)] max-w-[640px] leading-[1.85]">
-            Comprehensive technology solutions spanning software development, cloud computing, infrastructure, government IT, strategic business consulting — and NIN enrollment services for Nigerians.
-          </p>
+          <AnimateIn type="slide-up">
+            <p className="font-montserrat text-[0.65rem] tracking-[0.2em] text-[#9d8553] uppercase mb-4">OUR CAPABILITIES</p>
+            <h1 className="font-cormorant text-[clamp(2.5rem,6vw,4.5rem)] font-normal text-white leading-[1.05] mb-6">
+              <em className="italic text-[#9d8553]">Services</em> Portfolio
+            </h1>
+            <p className="font-montserrat text-[0.82rem] text-[rgba(255,255,255,0.6)] max-w-[640px] leading-[1.85]">
+              Comprehensive technology solutions spanning software development, cloud computing, infrastructure, government IT, strategic business consulting — and NIN enrollment services for Nigerians.
+            </p>
+          </AnimateIn>
         </div>
       </section>
 
       {/* PROCESS BAND */}
       <section className="bg-[#9d8553] py-[2.5rem] px-[3rem]">
-        <div className="max-w-[1200px] mx-auto flex items-center justify-between flex-wrap gap-4">
+        <AnimateIn type="fade" className="max-w-[1200px] mx-auto flex items-center justify-between flex-wrap gap-4">
           <h3 className="font-cormorant text-[1.6rem] font-normal text-[#1a1714]">
             Business Process <em className="italic">Reengineering</em>
           </h3>
@@ -116,7 +120,7 @@ export default function Services() {
               </div>
             ))}
           </div>
-        </div>
+        </AnimateIn>
       </section>
 
       {/* SERVICE LISTINGS */}
@@ -129,19 +133,19 @@ export default function Services() {
           return (
             <section
               key={i}
-              className={`py-[6rem] px-[3rem] ${isDark ? "bg-[#0e0d0c]" : "bg-[#f2ede6]"}`}
+              className={`py-[6rem] px-[3rem] overflow-hidden ${isDark ? "bg-[#0e0d0c]" : "bg-[#f2ede6]"}`}
             >
               <div className="max-w-[1200px] mx-auto">
                 <div className={`grid ${svc.image ? "grid-cols-2" : "grid-cols-1"} gap-16 items-center`}>
                   {/* Image column (when image should appear first/left) */}
                   {svc.image && imageFirst && (
-                    <div className="relative overflow-hidden min-h-[320px]">
+                    <AnimateIn type="left" className="relative overflow-hidden min-h-[320px]">
                       <Image src={svc.image} alt={svc.title} fill className="object-cover" />
-                    </div>
+                    </AnimateIn>
                   )}
 
                   {/* Text column */}
-                  <div>
+                  <AnimateIn type={imageFirst ? "right" : "left"}>
                     <Icon size={22} color="#9d8553" className="mb-[1.25rem]" />
                     <h2 className={`font-cormorant text-[2rem] font-normal mb-[1.25rem] ${isDark ? "text-white" : "text-[#1a1714]"}`}>{svc.title}</h2>
                     <p className={`font-montserrat text-[0.8rem] leading-[1.9] mb-6 ${isDark ? "text-[rgba(255,255,255,0.6)]" : "text-[#7a6a55]"}`}>{svc.description}</p>
@@ -152,13 +156,13 @@ export default function Services() {
                         </li>
                       ))}
                     </ul>
-                  </div>
+                  </AnimateIn>
 
                   {/* Image column (when image should appear last/right) */}
                   {svc.image && !imageFirst && (
-                    <div className="relative overflow-hidden min-h-[320px]">
+                    <AnimateIn type="right" className="relative overflow-hidden min-h-[320px]">
                       <Image src={svc.image} alt={svc.title} fill className="object-cover" />
-                    </div>
+                    </AnimateIn>
                   )}
                 </div>
               </div>
