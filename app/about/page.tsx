@@ -1,8 +1,48 @@
+import type { Metadata } from "next";
 import { Target, Award, Users, Globe } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "About Us",
+  description: "Learn about Lagos Analysis Corporation (LANCOR) — 30+ years of precision, excellence, and innovation in technology consulting, headquartered in Newton, Massachusetts. Meet our leadership team.",
+  keywords: ["about LANCOR", "Lagos Analysis Corporation", "technology consulting firm", "IT company Newton MA", "Adé Oyègbolá", "process reengineering"],
+  openGraph: {
+    title: "About LANCOR LTD — Three Decades of Innovation",
+    description: "Established in 1994, LANCOR is a professional consulting, research, and development services firm offering strategic process reengineering solutions worldwide.",
+    url: "https://www.lancorltd.com/about",
+  },
+};
 
 export default function About() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "AboutPage",
+            "name": "About LANCOR LTD",
+            "description": "Learn about Lagos Analysis Corporation — 30+ years of innovation in technology consulting.",
+            "mainEntity": {
+              "@type": "Organization",
+              "name": "Lagos Analysis Corporation (LANCOR)",
+              "foundingDate": "1994",
+              "founder": [
+                {
+                  "@type": "Person",
+                  "name": "Adé Oyègbolá",
+                  "jobTitle": "Chief Executive Officer"
+                },
+                {
+                  "@type": "Person",
+                  "name": "Engr. O. Walter Olúwolé",
+                  "jobTitle": "President & Chief Technology Officer"
+                }
+              ]
+            }
+          }).replace(/</g, '\u003c'),
+        }}
+      />
       {/* HERO */}
       <section className="relative pt-16 bg-[url('/home-about.png')] bg-cover bg-center bg-no-repeat bg-[#0e0d0c] min-h-105 flex items-end">
         <div className="absolute inset-0 bg-[repeating-linear-gradient(90deg,rgba(30,40,60,0.12)_0px,rgba(30,40,60,0.12)_2px,transparent_2px,transparent_80px),repeating-linear-gradient(0deg,rgba(30,40,60,0.06)_0px,rgba(30,40,60,0.06)_1px,transparent_1px,transparent_60px)] pointer-events-none" />

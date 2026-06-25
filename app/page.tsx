@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -56,9 +57,72 @@ const services = [
   },
 ];
 
+export const metadata: Metadata = {
+  title: "Dynamic Technology Solutions",
+  description: "LANCOR LTD — Professional consulting, research, and development services offering strategic IT solutions, cloud computing, software development, NIN enrollment, and business consulting since 1994.",
+  keywords: ["IT consulting", "technology solutions", "software development", "cloud computing", "business consulting", "NIN enrollment", "process reengineering", "Newton Massachusetts", "LANCOR"],
+  openGraph: {
+    title: "LANCOR LTD — Dynamic Technology Solutions",
+    description: "Professional consulting, research, and development services — offering strategic process reengineering solutions to clients around the world since 1994.",
+    url: "https://www.lancorltd.com",
+    type: "website",
+  },
+};
+
 export default function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Organization",
+                "@id": "https://www.lancorltd.com/#organization",
+                "name": "Lagos Analysis Corporation (LANCOR)",
+                "url": "https://www.lancorltd.com",
+                "logo": "https://www.lancorltd.com/logo.png",
+                "description": "Professional consulting, research, and development services firm offering strategic process reengineering solutions since 1994.",
+                "foundingDate": "1994",
+                "sameAs": [],
+                "contactPoint": {
+                  "@type": "ContactPoint",
+                  "telephone": "+1-617-431-6200",
+                  "contactType": "customer service",
+                  "email": "info@lancorltd.com",
+                  "availableLanguage": "English"
+                }
+              },
+              {
+                "@type": "LocalBusiness",
+                "@id": "https://www.lancorltd.com/#localbusiness",
+                "name": "LANCOR LTD",
+                "image": "https://www.lancorltd.com/logo.png",
+                "url": "https://www.lancorltd.com",
+                "telephone": "+1-617-431-6200",
+                "email": "info@lancorltd.com",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "2000 Commonwealth Ave, Suite 310",
+                  "addressLocality": "Newton Auburndale",
+                  "addressRegion": "MA",
+                  "postalCode": "02466",
+                  "addressCountry": "US"
+                },
+                "openingHoursSpecification": {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                  "opens": "09:00",
+                  "closes": "18:00"
+                },
+                "duns": "009498669"
+              }
+            ]
+          }).replace(/</g, '\u003c'),
+        }}
+      />
       {/* HERO */}
       <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-[#0e1520]">
         <div className="absolute inset-0 bg-[linear-gradient(135deg,#0d1822_0%,#16232e_30%,#1a2030_50%,#12181f_100%)]" />

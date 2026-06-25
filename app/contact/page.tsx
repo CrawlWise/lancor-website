@@ -1,12 +1,47 @@
-"use client";
+import type { Metadata } from "next";
 import { MapPin, Phone, Printer, Mail, Clock, Calendar, Send } from "lucide-react";
-import { useState } from "react";
+
+export const metadata: Metadata = {
+  title: "Contact Us",
+  description: "Get in touch with LANCOR LTD — headquartered at 2000 Commonwealth Avenue, Suite 310, Newton Auburndale, MA 02466. Call +1.617.431.6200 or email info@lancorltd.com.",
+  keywords: ["contact LANCOR", "LANCOR phone number", "LANCOR email", "IT consulting Newton MA", "technology consulting contact"],
+  openGraph: {
+    title: "Contact Us — LANCOR LTD",
+    description: "Reach out to LANCOR for technology consulting, software development, cloud computing, and NIN enrollment services.",
+    url: "https://www.lancorltd.com/contact",
+  },
+};
 
 export default function Contact() {
-  const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ContactPage",
+            "name": "Contact LANCOR LTD",
+            "description": "Get in touch with LANCOR for professional technology consulting services.",
+            "mainEntity": {
+              "@type": "Organization",
+              "name": "LANCOR LTD",
+              "telephone": "+1-617-431-6200",
+              "faxNumber": "+1-617-939-3900",
+              "email": "info@lancorltd.com",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "2000 Commonwealth Avenue, Suite 310",
+                "addressLocality": "Newton Auburndale",
+                "addressRegion": "MA",
+                "postalCode": "02466",
+                "addressCountry": "US"
+              }
+            }
+          }).replace(/</g, '\u003c'),
+        }}
+      />
       {/* HERO */}
       <section className="bg-[#0e0d0c] pt-16 min-h-[220px] flex items-end">
         <div className="absolute left-0 right-0 top-0 h-[284px] bg-[linear-gradient(to_bottom,#0a0e14_0%,#0e0d0c_100%)]" />

@@ -29,10 +29,10 @@ export default function Footer() {
           <div>
             <div className="label-text text-[rgba(255,255,255,0.5)] mb-6">NAVIGATION</div>
             <ul className="list-none flex flex-col gap-[0.9rem]">
-              {["Home", "About", "Services", "Contact"].map((item) => (
+              {["Home", "About", "Services", "NIN Enrollment", "Contact"].map((item) => (
                 <li key={item}>
                   <Link
-                    href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+                    href={item === "Home" ? "/" : item === "NIN Enrollment" ? "/nin-enrollment" : `/${item.toLowerCase()}`}
                     className="font-montserrat text-[0.78rem] text-[rgba(255,255,255,0.6)] no-underline transition-colors duration-200"
                   >
                     {item}
@@ -62,7 +62,7 @@ export default function Footer() {
           {/* Headquarters */}
           <div>
             <div className="label-text text-[rgba(255,255,255,0.5)] mb-6">HEADQUARTERS</div>
-            <div className="flex flex-col gap-4">
+            <address className="flex flex-col gap-4 not-italic">
               <div className="flex gap-3 items-start">
                 <MapPin size={14} color="#9d8553" className="mt-[2px] shrink-0" />
                 <span className="font-montserrat text-[0.75rem] text-[rgba(255,255,255,0.6)] leading-[1.7]">
@@ -77,14 +77,14 @@ export default function Footer() {
                 <Mail size={14} color="#9d8553" className="shrink-0" />
                 <span className="font-montserrat text-[0.75rem] text-[rgba(255,255,255,0.6)]">info@lancorltd.com</span>
               </div>
-            </div>
+            </address>
           </div>
         </div>
 
         {/* Bottom bar */}
         <div className="mt-16 pt-8 border-t border-[rgba(255,255,255,0.08)] flex justify-between items-center">
           <span className="font-montserrat text-[0.65rem] text-[rgba(255,255,255,0.3)]">
-            © 2024 Lagos Analysis Corporation. All rights reserved.
+            © {new Date().getFullYear()} Lagos Analysis Corporation. All rights reserved.
           </span>
           <span className="font-montserrat text-[0.65rem] text-[rgba(255,255,255,0.3)]">
             UNGM Registration # 104496

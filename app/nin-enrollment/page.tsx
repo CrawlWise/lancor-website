@@ -1,9 +1,59 @@
+import type { Metadata } from "next";
 import { MapPin, Phone, Clock, Users, CheckCircle, Calendar, Globe, Star, ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "NIN Enrollment Service",
+  description: "Official Nigerian National Identification Number (NIN) enrollment service in Newton, Massachusetts. LANCOR, in partnership with Knowledge Square LLC, is a NIMC-authorized enrollment center for Nigerians in the US.",
+  keywords: ["NIN enrollment", "Nigerian National Identification Number", "NIMC enrollment center", "NIN enrollment USA", "NIN enrollment Boston", "NIN enrollment Massachusetts", "Knowledge Square LLC", "Nigerian diaspora"],
+  openGraph: {
+    title: "NIN Enrollment Service — LANCOR LTD",
+    description: "NIMC-authorized NIN enrollment center in Newton, MA. Book your appointment for Nigerian National Identification Number enrollment.",
+    url: "https://www.lancorltd.com/nin-enrollment",
+  },
+};
 
 export default function NINEnrollment() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "GovernmentService",
+            "name": "Nigerian NIN Enrollment Service",
+            "description": "Official NIMC-authorized enrollment center for the Nigerian National Identification Number (NIN) serving Nigerians in the United States.",
+            "provider": {
+              "@type": "Organization",
+              "name": "LANCOR LTD",
+              "url": "https://www.lancorltd.com"
+            },
+            "areaServed": {
+              "@type": "Country",
+              "name": "United States"
+            },
+            "serviceType": "NIN Enrollment",
+            "availableChannel": {
+              "@type": "ServiceChannel",
+              "serviceLocation": {
+                "@type": "Place",
+                "name": "LANCOR NIN Enrollment Center",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "2000 Commonwealth Ave, Suite 310",
+                  "addressLocality": "Newton Auburndale",
+                  "addressRegion": "MA",
+                  "postalCode": "02466",
+                  "addressCountry": "US"
+                },
+                "telephone": "+1-617-431-6200"
+              },
+              "serviceUrl": "https://calendly.com/iqid_usa/boston"
+            }
+          }).replace(/</g, '\u003c'),
+        }}
+      />
       {/* HERO */}
       <section className="bg-[#0e0d0c] pt-16 min-h-auto relative px-[3rem] pt-[calc(64px+4rem)] pb-[5rem]">
         <div className="absolute inset-0 bg-[linear-gradient(to_bottom,#0a0e14_0%,#0e0d0c_100%)]" />

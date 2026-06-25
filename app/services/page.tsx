@@ -1,5 +1,17 @@
 import { Shield, ShieldCheck, Briefcase, Code2, Cloud, Network, Building2, GraduationCap, ArrowRight } from "lucide-react";
+import type { Metadata } from "next";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "Services",
+  description: "Explore LANCOR's comprehensive technology services — software development, cloud computing, IT infrastructure, business consulting, government IT solutions, manpower development, and NIN enrollment services.",
+  keywords: ["software development services", "cloud computing consulting", "IT infrastructure", "business consulting", "government IT solutions", "NIN enrollment", "manpower development", "LANCOR services"],
+  openGraph: {
+    title: "Services Portfolio — LANCOR LTD",
+    description: "Comprehensive technology solutions spanning software development, cloud computing, infrastructure, government IT, business consulting, and NIN enrollment.",
+    url: "https://www.lancorltd.com/services",
+  },
+};
 
 const serviceDetails = [
   {
@@ -56,6 +68,26 @@ const serviceDetails = [
 export default function Services() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "name": "LANCOR Technology Services",
+            "description": "Comprehensive technology solutions portfolio",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "item": { "@type": "Service", "name": "NIN Enrollment Service", "description": "Official Nigerian National Identification Number enrollment service for Nigerians in the United States." }},
+              { "@type": "ListItem", "position": 2, "item": { "@type": "Service", "name": "Business Consulting Services", "description": "Strategic planning, viability analysis, and growth strategies for business optimization." }},
+              { "@type": "ListItem", "position": 3, "item": { "@type": "Service", "name": "Software Application Development", "description": "Custom software development, database design, biometrics software, and full-cycle SDLC solutions." }},
+              { "@type": "ListItem", "position": 4, "item": { "@type": "Service", "name": "Cloud Computing Services", "description": "Cloud strategy, implementation, integration, and management for future-proof infrastructure." }},
+              { "@type": "ListItem", "position": 5, "item": { "@type": "Service", "name": "IT Infrastructure Services", "description": "Data center design, network engineering, multi-vendor integration, and infrastructure consulting." }},
+              { "@type": "ListItem", "position": 6, "item": { "@type": "Service", "name": "Government IT Solutions", "description": "Process reengineering, shared services, and transformation roadmaps for government agencies." }},
+              { "@type": "ListItem", "position": 7, "item": { "@type": "Service", "name": "Manpower Development Services", "description": "IT management training, information security, project management, and performance coaching." }}
+            ]
+          }).replace(/</g, '\u003c'),
+        }}
+      />
       {/* HERO */}
       <section className="bg-[#0e0d0c] pt-16 min-h-[360px] flex items-end relative">
         <div className="absolute inset-0 bg-[linear-gradient(to_bottom,#0a0f15_0%,#101820_60%,#0e0d0c_100%)]" />
