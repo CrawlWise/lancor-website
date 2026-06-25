@@ -4,10 +4,11 @@ export default function About() {
   return (
     <>
       {/* HERO */}
-      <section className="relative pt-16 bg-[#0e0d0c] min-h-[420px] flex items-end">
-        <div className="absolute inset-0 [background-image:repeating-linear-gradient(90deg,rgba(30,40,60,0.3)_0px,rgba(30,40,60,0.3)_2px,transparent_2px,transparent_80px),repeating-linear-gradient(0deg,rgba(30,40,60,0.15)_0px,rgba(30,40,60,0.15)_1px,transparent_1px,transparent_60px)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,#0a0f15_0%,#101820_60%,#0e0d0c_100%)]" />
-        <div className="relative z-[2] max-w-[1200px] w-full mx-auto px-[3rem] pt-[5rem] pb-[4rem]">
+      <section className="relative pt-16 bg-[url('/home-about.png')] bg-cover bg-center bg-no-repeat bg-[#0e0d0c] min-h-105 flex items-end">
+        <div className="absolute inset-0 bg-[repeating-linear-gradient(90deg,rgba(30,40,60,0.12)_0px,rgba(30,40,60,0.12)_2px,transparent_2px,transparent_80px),repeating-linear-gradient(0deg,rgba(30,40,60,0.06)_0px,rgba(30,40,60,0.06)_1px,transparent_1px,transparent_60px)] pointer-events-none" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(10,15,21,0.35)_0%,rgba(16,24,32,0.25)_60%,rgba(14,13,12,0.4)_100%)] pointer-events-none" />
+        <div className="absolute inset-0 bg-black/60 pointer-events-none" />
+        <div className="relative z-2 max-w-300 w-full mx-auto px-12 pt-20 pb-16">
           <p className="font-montserrat text-[0.65rem] tracking-[0.2em] text-[#9d8553] uppercase mb-[1.2rem]">ABOUT US</p>
           <h1 className="font-cormorant text-[clamp(3rem,6vw,5rem)] font-normal text-white leading-[1.05]">
             Our <em className="italic text-[#9d8553]">Legacy</em>
@@ -16,8 +17,8 @@ export default function About() {
       </section>
 
       {/* OUR STORY */}
-      <section className="bg-[#f2ede6] py-[8rem] px-[3rem]">
-        <div className="max-w-[1200px] mx-auto grid grid-cols-2 gap-[6rem]">
+      <section className="bg-[#f2ede6] py-32 px-12">
+        <div className="max-w-300 mx-auto grid grid-cols-2 gap-24">
           <div>
             <p className="font-montserrat text-[0.65rem] tracking-[0.2em] text-[#9d8553] uppercase mb-[1.2rem]">OUR STORY</p>
             <h2 className="font-cormorant text-[clamp(2rem,4vw,3rem)] font-normal text-[#1a1714] leading-[1.15]">

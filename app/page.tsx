@@ -62,11 +62,11 @@ export default function Home() {
       {/* HERO */}
       <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-[#0e1520]">
         <div className="absolute inset-0 bg-[linear-gradient(135deg,#0d1822_0%,#16232e_30%,#1a2030_50%,#12181f_100%)]" />
-        <div className="absolute inset-0 [background-image:repeating-linear-gradient(90deg,rgba(30,50,70,0.25)_0px,rgba(30,50,70,0.25)_2px,transparent_2px,transparent_80px),repeating-linear-gradient(0deg,rgba(30,50,70,0.1)_0px,rgba(30,50,70,0.1)_1px,transparent_1px,transparent_60px)]" />
+        <div className="absolute inset-0 bg-[repeating-linear-gradient(90deg,rgba(30,50,70,0.25)_0px,rgba(30,50,70,0.25)_2px,transparent_2px,transparent_80px),repeating-linear-gradient(0deg,rgba(30,50,70,0.1)_0px,rgba(30,50,70,0.1)_1px,transparent_1px,transparent_60px)]" />
         <div className="absolute right-[10%] top-[10%] w-[55%] h-[85%] bg-[radial-gradient(ellipse_at_60%_40%,rgba(180,120,50,0.12)_0%,transparent_60%)] pointer-events-none" />
         <div className="h-16" />
-        <div className="relative z-[2] px-[3rem] py-[4rem] max-w-[1200px] w-full mx-auto">
-          <div className="max-w-[680px]">
+        <div className="relative z-2 px-12 py-16 max-w-300 w-full mx-auto">
+          <div className="max-w-170">
             <p className="label-text text-[#9d8553] mb-[2rem]">EST. 1994 — NEWTON, MASSACHUSETTS</p>
             <h1 className="font-cormorant text-[clamp(3rem,7vw,5.5rem)] font-normal leading-[1.05] text-white mb-0">
               Dynamic<br />
@@ -134,15 +134,15 @@ export default function Home() {
       </section>
 
       {/* ABOUT */}
-      <section className="bg-[#0e0d0c] py-[8rem] px-[3rem]">
-        <div className="max-w-[1200px] mx-auto grid grid-cols-2 gap-[5rem] items-center">
+      <section className="bg-[#0e0d0c] py-32 px-12">
+        <div className="max-w-300 mx-auto grid grid-cols-2 gap-20 items-center">
           <div className="relative">
-            <div className="w-full aspect-[4/5] bg-[linear-gradient(160deg,#1a2535_0%,#0d1522_40%,#121a24_100%)] relative overflow-hidden">
-              <div className="absolute inset-0 [background-image:linear-gradient(0deg,rgba(157,133,83,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(157,133,83,0.08)_1px,transparent_1px)] [background-size:40px_40px]" />
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[2px] h-[60%] bg-[linear-gradient(to_bottom,transparent,rgba(157,133,83,0.4),transparent)]" />
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60%] h-[2px] bg-[linear-gradient(to_right,transparent,rgba(157,133,83,0.3),transparent)]" />
+            <div className="w-full aspect-4/5 bg-[url('/home-about.png')] bg-cover bg-center relative overflow-hidden">
+              <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(157,133,83,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(157,133,83,0.08)_1px,transparent_1px)] bg-size-[40px_40px]" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-0.5 h-[60%] bg-[linear-gradient(to_bottom,transparent,rgba(157,133,83,0.4),transparent)]" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60%] h-0.5 bg-[linear-gradient(to_right,transparent,rgba(157,133,83,0.3),transparent)]" />
             </div>
-            <div className="absolute bottom-[3rem] right-[-2rem] bg-[#9d8553] p-[1.5rem_2rem] text-center">
+            <div className="absolute bottom-12 right-[-2rem] bg-[#9d8553] p-[1.5rem_2rem] text-center">
               <div className="font-cormorant text-[2.5rem] font-normal text-white leading-none">30+</div>
               <div className="label-text text-[rgba(255,255,255,0.8)] text-[0.6rem] mt-[0.3rem]">YEARS</div>
             </div>
@@ -207,7 +207,8 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section className="relative py-40 px-12 bg-[#0e1218] text-center overflow-hidden">
+      <section className="relative py-40 px-12 bg-[url('/home-cta.png')] bg-cover bg-center bg-no-repeat bg-[#0e1218] text-center overflow-hidden">
+        <div className="absolute inset-0 bg-black/50" />
         <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(157,133,83,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(157,133,83,0.05)_1px,transparent_1px)] bg-size-[60px_60px]" />
         <div className="relative z-1">
           <p className="label-text text-[#9d8553] mb-6">READY TO TRANSFORM?</p>
