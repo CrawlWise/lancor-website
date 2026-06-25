@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { MapPin, Phone, Clock, Users, CheckCircle, Calendar, Globe, Star, ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
+import AnimateIn from "@/components/AnimateIn";
+
 
 export const metadata: Metadata = {
   title: "NIN Enrollment Service",
@@ -53,12 +55,11 @@ export default function NINEnrollment() {
             }
           }).replace(/</g, '\u003c'),
         }}
-      />
-      {/* HERO */}
+      />      {/* HERO */}
       <section className="bg-[#0e0d0c] pt-16 min-h-auto relative px-[3rem] pt-[calc(64px+4rem)] pb-[5rem]">
         <div className="absolute inset-0 bg-[linear-gradient(to_bottom,#0a0e14_0%,#0e0d0c_100%)]" />
         <div className="relative z-[2] max-w-[1200px] mx-auto grid grid-cols-2 gap-16 items-start">
-          <div>
+          <AnimateIn type="left">
             <div className="flex items-center gap-[0.6rem] mb-6">
               <div className="w-2 h-2 rounded-full bg-[#4ade80]" />
               <span className="font-montserrat text-[0.6rem] tracking-[0.2em] text-[rgba(255,255,255,0.5)] uppercase">NIMC-AUTHORIZED ENROLLMENT CENTER</span>
@@ -75,10 +76,10 @@ export default function NINEnrollment() {
               <a href="https://calendly.com/iqid_usa/boston" className="btn-gold"><Calendar size={14} /> BOOK APPOINTMENT</a>
               <a href="tel:+16174316200" className="btn-outline"><Phone size={14} /> CALL US</a>
             </div>
-          </div>
+          </AnimateIn>
 
           {/* Info card */}
-          <div className="border border-[rgba(157,133,83,0.3)] p-[2.5rem] bg-[rgba(157,133,83,0.05)]">
+          <AnimateIn type="right" className="border border-[rgba(157,133,83,0.3)] p-[2.5rem] bg-[rgba(157,133,83,0.05)]">
             <h3 className="font-cormorant text-[1.5rem] font-normal text-white mb-8">Enrollment Center Details</h3>
             {[
               { icon: MapPin, label: "LOCATION", val: "2000 Commonwealth Ave, Suite 310\nNewton Auburndale, MA 02466" },
@@ -97,14 +98,14 @@ export default function NINEnrollment() {
                 </div>
               );
             })}
-          </div>
+          </AnimateIn>
         </div>
       </section>
 
       {/* WHAT IS NIN + WHY YOU NEED */}
       <section className="bg-[#f2ede6] py-[7rem] px-[3rem]">
         <div className="max-w-[1200px] mx-auto grid grid-cols-2 gap-[5rem]">
-          <div>
+          <AnimateIn type="left">
             <p className="font-montserrat text-[0.65rem] tracking-[0.2em] text-[#9d8553] uppercase mb-[1.2rem]">BACKGROUND</p>
             <h2 className="font-cormorant text-[clamp(2rem,4vw,3rem)] font-normal text-[#1a1714] leading-[1.15] mb-6">
               What is the <em className="italic">NIN?</em>
@@ -121,9 +122,9 @@ export default function NINEnrollment() {
               </p>
               <p className="text-[#5a4a38]">- NIMC OFFICIAL DIRECTORY</p>
             </blockquote>
-          </div>
+          </AnimateIn>
 
-          <div>
+          <AnimateIn type="right" delay={0.2}>
             <p className="font-montserrat text-[0.65rem] tracking-[0.2em] text-[#9d8553] uppercase mb-[1.2rem]">WHY YOU NEED A NIN</p>
             <h2 className="font-cormorant text-[clamp(1.8rem,3vw,2.5rem)] font-normal text-[#9d8553] italic mb-8">
               Essential for Every Nigerian
@@ -143,17 +144,19 @@ export default function NINEnrollment() {
                 </div>
               ))}
             </div>
-          </div>
+          </AnimateIn>
         </div>
       </section>
 
       {/* HOW IT WORKS */}
       <section className="bg-[#0e0d0c] py-[7rem] px-[3rem]">
         <div className="max-w-[1200px] mx-auto">
-          <p className="font-montserrat text-[0.65rem] tracking-[0.2em] text-[#9d8553] uppercase mb-[1.2rem]">THE PROCESS</p>
-          <h2 className="font-cormorant text-[clamp(2rem,4vw,3rem)] font-normal text-white mb-[4rem]">
-            How It <em className="italic text-[#9d8553]">Works</em>
-          </h2>
+          <AnimateIn type="slide-up">
+            <p className="font-montserrat text-[0.65rem] tracking-[0.2em] text-[#9d8553] uppercase mb-[1.2rem]">THE PROCESS</p>
+            <h2 className="font-cormorant text-[clamp(2rem,4vw,3rem)] font-normal text-white mb-[4rem]">
+              How It <em className="italic text-[#9d8553]">Works</em>
+            </h2>
+          </AnimateIn>
           <div className="grid grid-cols-4 gap-8">
             {[
               { step: "01", title: "Book an Appointment", desc: "Schedule your NIN enrollment appointment online via Calendly. Enrollment is by appointments only — no walk-ins." },
@@ -161,151 +164,148 @@ export default function NINEnrollment() {
               { step: "03", title: "Visit Our Center", desc: "Come to our Newton, MA office at your scheduled time. Arrive on time - appointments run efficiently with minimal wait." },
               { step: "04", title: "Receive Your NIN", desc: "Your National Identification Number is issued by NIMC. We facilitate the process securely and professionally." },
             ].map((s, index, arr) => (
-            <div key={s.step} className={`pt-8 ${index < arr.length - 1 ? "border-r mr-4":""} border-[rgba(157,133,83,0.3)]`}>
+              <AnimateIn key={s.step} type="slide-up" delay={index * 0.1} className={`pt-8 ${index < arr.length - 1 ? "border-r mr-4":""} border-[rgba(157,133,83,0.3)]`}>
                 <div className="font-cormorant text-[2.5rem] text-[rgba(157,133,83,0.3)] leading-none mb-5">{s.step}</div>
                 <h3 className="font-cormorant text-[1.3rem] font-normal text-white mb-3">{s.title}</h3>
                 <p className="font-montserrat text-[0.75rem] text-[rgba(255,255,255,0.5)] leading-[1.8]">{s.desc}</p>
-              </div>
+              </AnimateIn>
             ))}
           </div>
         </div>
       </section>
 
       {/* CTA */}
-        <section className="bg-[#f2ede6] py-[7rem] px-[3rem]">
-          <div className="max-w-[672px] mx-auto bg-[#9d8553] p-[3rem]">
-            <Globe size={28} color="#1a1714" className="mb-6" />
-            <h2 className="font-cormorant text-[clamp(2rem,4vw,2.8rem)] font-normal text-[#1a1714] mb-6">
-              Ready to Get Your NIN?
-            </h2>
-            <p className="font-montserrat text-[0.8rem] text-[rgba(20,15,10,0.75)] leading-[1.8] mb-10">
-              Enrollment is <strong className="font-semibold">by appointment only</strong> — no walk-ins accepted. Book your slot online or call us to schedule. Our friendly staff will guide you through the entire process.
-            </p>
-            <div className="flex flex-col gap-4">
-              
-              <a href="https://calendly.com/iqid_usa/boston"
-                className="bg-[#1a1714] text-white font-montserrat text-[0.75rem] tracking-widest font-semibold py-4 px-6 flex items-center justify-center gap-2 no-underline"
-              >
-                <Calendar size={16} /> BOOK ONLINE
-              </a>
-              
-              <a href="tel:+16174316200"
-                className="border border-[rgba(0,0,0,0.3)] text-[#1a1714] font-montserrat text-[0.75rem] tracking-widest font-semibold py-4 px-6 flex items-center justify-center gap-2 no-underline"
-              >
-                <Phone size={16} /> CALL +1 617.431.6200
-              </a>
-            </div>
-            <p className="font-montserrat text-[0.6rem] tracking-[0.15em] text-[rgba(20,15,10,0.5)] mt-8 uppercase">
-              In partnership with Knowledge Square LLC · NIMC Authorized
-            </p>
+      <section className="bg-[#f2ede6] py-[7rem] px-[3rem]">
+        <AnimateIn type="scale" className="max-w-[672px] mx-auto bg-[#9d8553] p-[3rem]">
+          <Globe size={28} color="#1a1714" className="mb-6" />
+          <h2 className="font-cormorant text-[clamp(2rem,4vw,2.8rem)] font-normal text-[#1a1714] mb-6">
+            Ready to Get Your NIN?
+          </h2>
+          <p className="font-montserrat text-[0.8rem] text-[rgba(20,15,10,0.75)] leading-[1.8] mb-10">
+            Enrollment is <strong className="font-semibold">by appointment only</strong> — no walk-ins accepted. Book your slot online or call us to schedule. Our friendly staff will guide you through the entire process.
+          </p>
+          <div className="flex flex-col gap-4">
+            <a href="https://calendly.com/iqid_usa/boston"
+              className="bg-[#1a1714] text-white font-montserrat text-[0.75rem] tracking-widest font-semibold py-4 px-6 flex items-center justify-center gap-2 no-underline"
+            >
+              <Calendar size={16} /> BOOK ONLINE
+            </a>
+            <a href="tel:+16174316200"
+              className="border border-[rgba(0,0,0,0.3)] text-[#1a1714] font-montserrat text-[0.75rem] tracking-widest font-semibold py-4 px-6 flex items-center justify-center gap-2 no-underline"
+            >
+              <Phone size={16} /> CALL +1 617.431.6200
+            </a>
           </div>
-        </section>
-        {/* GOOGLE REVIEWS */}
-        <section className="bg-[#0e0d0c] py-28 px-12">
-          <div className="max-w-300 mx-auto">
-            <div className="flex items-end justify-between flex-wrap gap-6 mb-14">
+          <p className="font-montserrat text-[0.6rem] tracking-[0.15em] text-[rgba(20,15,10,0.5)] mt-8 uppercase">
+            In partnership with Knowledge Square LLC · NIMC Authorized
+          </p>
+        </AnimateIn>
+      </section>
+
+      {/* GOOGLE REVIEWS */}
+      {/* <section className="bg-[#0e0d0c] py-28 px-12">
+        <div className="max-w-300 mx-auto">
+          <div className="flex items-end justify-between flex-wrap gap-6 mb-14">
+            <AnimateIn type="slide-up">
+              <p className="font-montserrat text-[0.65rem] tracking-[0.2em] text-[#9d8553] uppercase mb-[1.2rem]">WHAT PEOPLE SAY</p>
+              <h2 className="font-cormorant text-[clamp(2.2rem,4vw,3.2rem)] font-normal text-white">
+                Google <em className="italic text-[#9d8553]">Reviews</em>
+              </h2>
+            </AnimateIn>
+            <AnimateIn type="fade" delay={0.2} className="flex items-center gap-6">
               <div>
-                <p className="font-montserrat text-[0.65rem] tracking-[0.2em] text-[#9d8553] uppercase mb-[1.2rem]">WHAT PEOPLE SAY</p>
-                <h2 className="font-cormorant text-[clamp(2.2rem,4vw,3.2rem)] font-normal text-white">
-                  Google <em className="italic text-[#9d8553]">Reviews</em>
-                </h2>
+                <div className="flex items-center gap-2">
+                  <span className="font-cormorant text-[1.6rem] font-normal text-white">4.8</span>
+                  <div className="flex gap-0.5">
+                    {[1, 2, 3, 4].map((i) => (
+                      <Star key={i} size={14} fill="#9d8553" color="#9d8553" />
+                    ))}
+                    <Star size={14} fill="none" color="#9d8553" />
+                  </div>
+                </div>
+                <p className="font-montserrat text-[0.6rem] text-[rgba(255,255,255,0.4)] tracking-wider mt-1">Based on 64 reviews</p>
               </div>
-              <div className="flex items-center gap-6">
-                <div>
-                  <div className="flex items-center gap-2">
-                    <span className="font-cormorant text-[1.6rem] font-normal text-white">4.8</span>
-                    <div className="flex gap-0.5">
-                      {[1, 2, 3, 4].map((i) => (
-                        <Star key={i} size={14} fill="#9d8553" color="#9d8553" />
-                      ))}
-                      <Star size={14} fill="none" color="#9d8553" />
+              <a href="#"
+                className="border border-[rgba(157,133,83,0.4)] text-[#9d8553] font-montserrat text-[0.65rem] tracking-widest font-medium py-3 px-5 flex items-center gap-2 no-underline"
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24">
+                  <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
+                  <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
+                  <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" />
+                  <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" />
+                </svg>
+                VIEW ON GOOGLE
+              </a>
+            </AnimateIn>
+          </div>
+
+          <div className="grid grid-cols-3 border-t border-l border-[rgba(255,255,255,0.08)]">
+            {[
+              {
+                name: "Agu Ugwu",
+                time: "a year ago",
+                rating: 5,
+                text: "\"The Service Provider did an amazing job with NIN Enrolment. He was Professional, efficient, and exceeded my expectations. I highly recommend them.\"",
+              },
+              {
+                name: "Uduak Uko",
+                time: "a year ago",
+                rating: 5,
+                text: "\"The service was very quick. Mr. Ayo was very professional and very straightforward.\"",
+              },
+              {
+                name: "Kelvin Edosomwan",
+                time: "a year ago",
+                rating: 5,
+                text: "\"Mr Ade was courteous and informative about the process. Went fast also.\"",
+              },
+            ].map((r, index) => (
+              <AnimateIn key={r.name} type="fade" delay={index * 0.1} className="border-r border-b border-[rgba(255,255,255,0.08)] p-8">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-[rgba(157,133,83,0.2)] flex items-center justify-center overflow-hidden shrink-0">
+                      <span className="font-cormorant text-[1rem] text-[#9d8553]">{r.name.charAt(0)}</span>
+                    </div>
+                    <div>
+                      <p className="font-montserrat text-[0.8rem] text-white font-medium">{r.name}</p>
+                      <p className="font-montserrat text-[0.65rem] text-[rgba(255,255,255,0.4)]">{r.time}</p>
                     </div>
                   </div>
-                  <p className="font-montserrat text-[0.6rem] text-[rgba(255,255,255,0.4)] tracking-wider mt-1">Based on 64 reviews</p>
-                </div>
-                
-                <a href="#"
-                  className="border border-[rgba(157,133,83,0.4)] text-[#9d8553] font-montserrat text-[0.65rem] tracking-widest font-medium py-3 px-5 flex items-center gap-2 no-underline"
-                >
-                  <svg width="14" height="14" viewBox="0 0 24 24">
+                  <svg width="16" height="16" viewBox="0 0 24 24">
                     <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
                     <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
                     <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" />
                     <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" />
                   </svg>
-                  VIEW ON GOOGLE
-                </a>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-3 border-t border-l border-[rgba(255,255,255,0.08)]">
-              {[
-                {
-                  name: "Agu Ugwu",
-                  time: "a year ago",
-                  rating: 5,
-                  text: "\"The Service Provider did an amazing job with NIN Enrolment. He was Professional, efficient, and exceeded my expectations. I highly recommend them.\"",
-                },
-                {
-                  name: "Uduak Uko",
-                  time: "a year ago",
-                  rating: 5,
-                  text: "\"The service was very quick. Mr. Ayo was very professional and very straightforward.\"",
-                },
-                {
-                  name: "Kelvin Edosomwan",
-                  time: "a year ago",
-                  rating: 5,
-                  text: "\"Mr Ade was courteous and informative about the process. Went fast also.\"",
-                },
-              ].map((r) => (
-                <div key={r.name} className="border-r border-b border-[rgba(255,255,255,0.08)] p-8">
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-full bg-[rgba(157,133,83,0.2)] flex items-center justify-center overflow-hidden shrink-0">
-                        <span className="font-cormorant text-[1rem] text-[#9d8553]">{r.name.charAt(0)}</span>
-                      </div>
-                      <div>
-                        <p className="font-montserrat text-[0.8rem] text-white font-medium">{r.name}</p>
-                        <p className="font-montserrat text-[0.65rem] text-[rgba(255,255,255,0.4)]">{r.time}</p>
-                      </div>
-                    </div>
-                    <svg width="16" height="16" viewBox="0 0 24 24">
-                      <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
-                      <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
-                      <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" />
-                      <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" />
-                    </svg>
-                  </div>
-                  <div className="flex gap-0.5 mb-4">
-                    {Array.from({ length: r.rating }).map((_, i) => (
-                      <Star key={i} size={13} fill="#9d8553" color="#9d8553" />
-                    ))}
-                  </div>
-                  <p className="font-montserrat text-[0.8rem] text-[rgba(255,255,255,0.6)] leading-[1.7]">{r.text}</p>
                 </div>
-              ))}
-            </div>
-
-            <div className="flex items-center justify-between mt-10">
-              <div className="flex items-center gap-4">
-                <button className="w-9 h-9 border border-[rgba(255,255,255,0.15)] flex items-center justify-center text-[rgba(255,255,255,0.4)]">
-                  <ChevronLeft size={16} />
-                </button>
-                <span className="font-montserrat text-[0.75rem] text-[rgba(255,255,255,0.5)]">1 / 3</span>
-                <button className="w-9 h-9 border border-[rgba(255,255,255,0.15)] flex items-center justify-center text-white">
-                  <ChevronRight size={16} />
-                </button>
-              </div>
-              
-              <a href="#"
-                className="border border-[rgba(157,133,83,0.4)] text-[#9d8553] font-montserrat text-[0.65rem] tracking-widest font-medium py-3 px-5 no-underline"
-              >
-                + WRITE A REVIEW
-              </a>
-            </div>
+                <div className="flex gap-0.5 mb-4">
+                  {Array.from({ length: r.rating }).map((_, i) => (
+                    <Star key={i} size={13} fill="#9d8553" color="#9d8553" />
+                  ))}
+                </div>
+                <p className="font-montserrat text-[0.8rem] text-[rgba(255,255,255,0.6)] leading-[1.7]">{r.text}</p>
+              </AnimateIn>
+            ))}
           </div>
-        </section>
+
+          <AnimateIn type="slide-up" delay={0.2} className="flex items-center justify-between mt-10">
+            <div className="flex items-center gap-4">
+              <button className="w-9 h-9 border border-[rgba(255,255,255,0.15)] flex items-center justify-center text-[rgba(255,255,255,0.4)]">
+                <ChevronLeft size={16} />
+              </button>
+              <span className="font-montserrat text-[0.75rem] text-[rgba(255,255,255,0.5)]">1 / 3</span>
+              <button className="w-9 h-9 border border-[rgba(255,255,255,0.15)] flex items-center justify-center text-white">
+                <ChevronRight size={16} />
+              </button>
+            </div>
+            <a href="#"
+              className="border border-[rgba(157,133,83,0.4)] text-[#9d8553] font-montserrat text-[0.65rem] tracking-widest font-medium py-3 px-5 no-underline"
+            >
+              + WRITE A REVIEW
+            </a>
+          </AnimateIn>
+        </div> 
+      </section>*/}
     </>
   );
 }
