@@ -4,11 +4,11 @@ export default function About() {
   return (
     <>
       {/* HERO */}
-      <section className="relative pt-16 bg-[url('/home-about.png')] bg-cover bg-center bg-no-repeat bg-[#0e0d0c] min-h-105 flex items-end">
+      <section className="relative pt-16 bg-[url('/home-about.png')] bg-cover bg-center bg-no-repeat bg-[#0e0d0c] min-h-[28rem] sm:min-h-105 flex items-end">
         <div className="absolute inset-0 bg-[repeating-linear-gradient(90deg,rgba(30,40,60,0.12)_0px,rgba(30,40,60,0.12)_2px,transparent_2px,transparent_80px),repeating-linear-gradient(0deg,rgba(30,40,60,0.06)_0px,rgba(30,40,60,0.06)_1px,transparent_1px,transparent_60px)] pointer-events-none" />
         <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(10,15,21,0.35)_0%,rgba(16,24,32,0.25)_60%,rgba(14,13,12,0.4)_100%)] pointer-events-none" />
         <div className="absolute inset-0 bg-black/60 pointer-events-none" />
-        <div className="relative z-2 max-w-300 w-full mx-auto px-12 pt-20 pb-16">
+        <div className="relative z-2 max-w-[1200px] w-full mx-auto px-4 sm:px-6 lg:px-12 pt-20 pb-16">
           <p className="font-montserrat text-[0.65rem] tracking-[0.2em] text-[#9d8553] uppercase mb-[1.2rem]">ABOUT US</p>
           <h1 className="font-cormorant text-[clamp(3rem,6vw,5rem)] font-normal text-white leading-[1.05]">
             Our <em className="italic text-[#9d8553]">Legacy</em>
@@ -17,8 +17,8 @@ export default function About() {
       </section>
 
       {/* OUR STORY */}
-      <section className="bg-[#f2ede6] py-32 px-12">
-        <div className="max-w-300 mx-auto grid grid-cols-2 gap-24">
+      <section className="bg-[#f2ede6] py-24 px-4 sm:px-6 lg:px-12">
+        <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-24">
           <div>
             <p className="font-montserrat text-[0.65rem] tracking-[0.2em] text-[#9d8553] uppercase mb-[1.2rem]">OUR STORY</p>
             <h2 className="font-cormorant text-[clamp(2rem,4vw,3rem)] font-normal text-[#1a1714] leading-[1.15]">
@@ -40,13 +40,13 @@ export default function About() {
       </section>
 
       {/* CORE VALUES */}
-      <section className="bg-[#0e0d0c] py-[7rem] px-[3rem]">
+      <section className="bg-[#0e0d0c] py-24 px-4 sm:px-6 lg:px-[3rem]">
         <div className="max-w-[1200px] mx-auto">
           <p className="font-montserrat text-[0.65rem] tracking-[0.2em] text-[#9d8553] uppercase mb-[1.2rem]">CORE VALUES</p>
           <h2 className="font-cormorant text-[clamp(2.5rem,5vw,4rem)] font-normal text-white mb-[4rem]">
             Our <em className="italic text-[#9d8553]">Pillars</em>
           </h2>
-          <div className="grid grid-cols-4 ">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4">
             {[
               { icon: Target, title: "Precision", desc: "Every solution is engineered with meticulous attention to detail." },
               { icon: Award, title: "Excellence", desc: "We set the bar high and consistently exceed expectations." },
@@ -55,7 +55,7 @@ export default function About() {
             ].map((v, i) => {
               const Icon = v.icon;
               return (
-                <div key={i} className={`p-[2.5rem_2rem] ${i < 3 ? "border-r border-[rgba(157,133,83,0.15)]" : ""}`}>
+                <div key={i} className={`p-[2.5rem_2rem] ${i < 3 ? "sm:border-r border-[rgba(157,133,83,0.15)]" : ""} ${i % 2 === 1 ? "sm:border-r-0 xl:border-r" : ""}`}>
                   <Icon size={22} color="#9d8553" className="mb-[1.25rem]" />
                   <h3 className="font-cormorant text-[1.4rem] font-normal text-white mb-[0.9rem]">{v.title}</h3>
                   <p className="font-montserrat text-[0.75rem] text-[rgba(255,255,255,0.5)] leading-[1.8]">{v.desc}</p>
@@ -67,11 +67,11 @@ export default function About() {
       </section>
 
       {/* LEADERSHIP */}
-      <section className="bg-[#f2ede6] py-[7rem] px-[3rem]">
+      <section className="bg-[#f2ede6] py-24 px-4 sm:px-6 lg:px-[3rem]">
         <div className="max-w-[1200px] mx-auto">
           <p className="font-montserrat text-[0.65rem] tracking-[0.2em] text-[#9d8553] uppercase mb-[1.2rem]">EXECUTIVE OFFICERS</p>
           <h2 className="font-cormorant text-[clamp(2.5rem,5vw,4rem)] font-normal text-[#1a1714] italic mb-[4rem]">Leadership</h2>
-          <div className="grid grid-cols-2 gap-[2rem]">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-[2rem]">
             {[
               {
                 init: "A",
