@@ -65,8 +65,8 @@ export default function Home() {
         <div className="absolute inset-0 bg-[repeating-linear-gradient(90deg,rgba(30,50,70,0.25)_0px,rgba(30,50,70,0.25)_2px,transparent_2px,transparent_80px),repeating-linear-gradient(0deg,rgba(30,50,70,0.1)_0px,rgba(30,50,70,0.1)_1px,transparent_1px,transparent_60px)]" />
         <div className="absolute right-[10%] top-[10%] w-[55%] h-[85%] bg-[radial-gradient(ellipse_at_60%_40%,rgba(180,120,50,0.12)_0%,transparent_60%)] pointer-events-none" />
         <div className="h-16" />
-        <div className="relative z-2 px-12 py-16 max-w-300 w-full mx-auto">
-          <div className="max-w-170">
+        <div className="relative z-2 px-4 sm:px-6 lg:px-12 py-16 max-w-[1200px] w-full mx-auto">
+          <div className="max-w-[760px] mx-auto">
             <p className="label-text text-[#9d8553] mb-[2rem]">EST. 1994 — NEWTON, MASSACHUSETTS</p>
             <h1 className="font-cormorant text-[clamp(3rem,7vw,5.5rem)] font-normal leading-[1.05] text-white mb-0">
               Dynamic<br />
@@ -89,10 +89,10 @@ export default function Home() {
       </section>
 
       {/* STATS */}
-      <section className="bg-[#0e0d0c] py-[5rem] px-[3rem]">
-        <div className="max-w-[1200px] mx-auto grid grid-cols-4 text-center">
+      <section className="bg-[#0e0d0c] py-[5rem] px-4 sm:px-6 lg:px-[3rem]">
+        <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 text-center gap-y-8">
           {[{ val: "30+", label: "YEARS OF EXPERIENCE" }, { val: "20+", label: "GLOBAL CLIENTS" }, { val: "5", label: "SERVICE DOMAINS" }, { val: "100%", label: "CLIENT RETENTION" }].map((s, i) => (
-            <div key={i} className={`px-[2rem] ${i < 3 ? "border-r border-[rgba(157,133,83,0.15)]" : ""}`}>
+            <div key={i} className={`px-4 md:px-[2rem] ${i < 3 ? "md:border-r border-[rgba(157,133,83,0.15)]" : ""}`}>
               <div className="font-cormorant text-[3.5rem] font-normal text-[#9d8553] leading-none mb-3">{s.val}</div>
               <div className="w-[30px] h-px bg-[#9d8553] mx-auto mb-3" />
               <p className="label-text text-[rgba(255,255,255,0.45)] text-[0.6rem]">{s.label}</p>
@@ -102,19 +102,20 @@ export default function Home() {
       </section>
 
       {/* SERVICES */}
-      <section className="bg-[#f2ede6] py-28 px-12">
-        <div className="max-w-300 mx-auto">
+      <section className="bg-[#f2ede6] py-28 px-4 sm:px-6 lg:px-12">
+        <div className="max-w-[1200px] mx-auto">
           <p className="label-text text-[#9d8553] mb-[1.2rem]">WHAT WE DO</p>
           <h2 className="font-cormorant text-[clamp(2.5rem,5vw,4rem)] font-normal text-[#1a1714] leading-[1.1] mb-16">
             Comprehensive<br /><em className="italic">Solutions</em> Portfolio
           </h2>
-          <div className="grid grid-cols-3 border-t border-[rgba(0,0,0,0.1)]">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 border-t border-[rgba(0,0,0,0.1)]">
             {services.map((svc, i) => {
               const Icon = svc.icon;
+              const borderClass = (i + 1) % 3 !== 0 ? "lg:border-r border-[rgba(0,0,0,0.1)]" : "";
               return (
                 <div
                   key={i}
-                  className={`group hover:bg-[#1a1714] p-[2.5rem_2rem] border-b border-[rgba(0,0,0,0.1)] ${(i + 1) % 3 !== 0 ? "border-r border-[rgba(0,0,0,0.1)]" : ""} ${svc.featured ? "bg-[#1a1714]" : "bg-transparent"}`}
+                  className={`group hover:bg-[#1a1714] p-[2.5rem_2rem] border-b border-[rgba(0,0,0,0.1)] ${borderClass} ${svc.featured ? "bg-[#1a1714]" : "bg-transparent"}`}
                 >
                   <Icon size={20} color="#9d8553" className="mb-5" />
                   <h3 className={`group-hover:text-white font-cormorant text-[1.4rem] font-normal mb-[0.9rem] ${svc.featured ? "text-white" : "text-[#3d3020]"}`}>{svc.title}</h3>
@@ -123,7 +124,7 @@ export default function Home() {
                 </div>
               );
             })}
-            <div className="p-[2.5rem_2rem] bg-[#e8e2d8] border-b border-[rgba(0,0,0,0.1)]" />
+            <div className="hidden lg:block p-[2.5rem_2rem] bg-[#e8e2d8] border-b border-[rgba(0,0,0,0.1)]" />
           </div>
           <div className="text-center mt-[3rem]">
             <Link href="/services" className="font-montserrat text-[0.7rem] tracking-[0.15em] text-[#9d8553] no-underline inline-flex items-center gap-[0.6rem]">
@@ -134,15 +135,15 @@ export default function Home() {
       </section>
 
       {/* ABOUT */}
-      <section className="bg-[#0e0d0c] py-32 px-12">
-        <div className="max-w-300 mx-auto grid grid-cols-2 gap-20 items-center">
+      <section className="bg-[#0e0d0c] py-32 px-4 sm:px-6 lg:px-12">
+        <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div className="relative">
             <div className="w-full aspect-4/5 bg-[url('/home-about.png')] bg-cover bg-center relative overflow-hidden">
               <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(157,133,83,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(157,133,83,0.08)_1px,transparent_1px)] bg-size-[40px_40px]" />
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-0.5 h-[60%] bg-[linear-gradient(to_bottom,transparent,rgba(157,133,83,0.4),transparent)]" />
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60%] h-0.5 bg-[linear-gradient(to_right,transparent,rgba(157,133,83,0.3),transparent)]" />
             </div>
-            <div className="absolute bottom-12 right-[-2rem] bg-[#9d8553] p-[1.5rem_2rem] text-center">
+            <div className="absolute bottom-12 right-4 lg:right-[-2rem] bg-[#9d8553] p-[1.5rem_2rem] text-center">
               <div className="font-cormorant text-[2.5rem] font-normal text-white leading-none">30+</div>
               <div className="label-text text-[rgba(255,255,255,0.8)] text-[0.6rem] mt-[0.3rem]">YEARS</div>
             </div>
@@ -158,7 +159,7 @@ export default function Home() {
             <p className="font-montserrat text-[0.8rem] text-[rgba(255,255,255,0.65)] leading-[1.9] mb-10">
               If there&apos;s a big, complicated, even messy, perhaps convoluted, and halfway-botched IT project that nobody wants to touch — we&apos;re just the right company to take over. We&apos;re terrific at problem-solving.
             </p>
-            <div className="grid grid-cols-3 gap-6 mb-10">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
               {[{ label: "EMPHASIS", val: "Precision & Excellence" }, { label: "HEADQUARTERS", val: "Newton, MA" }, { label: "CLIENTS", val: "Global Reach" }].map((item) => (
                 <div key={item.label}>
                   <p className="label-text text-[rgba(255,255,255,0.35)] mb-[0.4rem] text-[0.55rem]">{item.label}</p>
@@ -174,9 +175,9 @@ export default function Home() {
       </section>
 
       {/* NIN PROMO */}
-      <section className="bg-[#9d8553] py-32 px-12 relative overflow-hidden">
+      <section className="bg-[#9d8553] py-32 px-4 sm:px-6 lg:px-12 relative overflow-hidden">
         <div className="absolute inset-0 bg-[repeating-linear-gradient(45deg,rgba(0,0,0,0.04)_0px,rgba(0,0,0,0.04)_1px,transparent_1px,transparent_20px)]" />
-        <div className="max-w-300 mx-auto grid grid-cols-2 gap-20 items-start relative z-1">
+        <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-start relative z-1">
           <div>
             <div className="flex items-center gap-3 mb-8">
               <Shield size={16} color="rgba(0,0,0,0.5)" />
@@ -207,7 +208,7 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section className="relative py-40 px-12 bg-[url('/home-cta.png')] bg-cover bg-center bg-no-repeat bg-[#0e1218] text-center overflow-hidden">
+      <section className="relative py-40 px-4 sm:px-6 lg:px-12 bg-[url('/home-cta.png')] bg-cover bg-center bg-no-repeat bg-[#0e1218] text-center overflow-hidden">
         <div className="absolute inset-0 bg-black/50" />
         <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(157,133,83,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(157,133,83,0.05)_1px,transparent_1px)] bg-size-[60px_60px]" />
         <div className="relative z-1">
@@ -215,7 +216,7 @@ export default function Home() {
           <h2 className="font-cormorant text-[clamp(3rem,6vw,5rem)] font-normal text-white leading-[1.1]">
             Let&apos;s Build<br /><em className="italic text-[#9d8553]">Something Remarkable</em>
           </h2>
-          <p className="font-montserrat text-[0.82rem] text-[rgba(255,255,255,0.6)] max-w-140 mx-auto mt-8 mb-12 leading-[1.8]">
+          <p className="font-montserrat text-[0.82rem] text-[rgba(255,255,255,0.6)] max-w-[520px] mx-auto mt-8 mb-12 leading-[1.8]">
             We&apos;re the no-nonsense, never-say-never, super-efficient lovers of challenges. Bring us your toughest IT problems.
           </p>
           <Link href="/contact" className="btn-gold">START A CONVERSATION <ArrowRight size={14} /></Link>

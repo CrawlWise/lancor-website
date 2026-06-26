@@ -5,8 +5,8 @@ import { Phone, Mail, MapPin } from "lucide-react";
 export default function Footer() {
   return (
     <footer className="bg-[#0e0d0c] border-t border-[rgba(157,133,83,0.2)] py-[5rem_0_3rem] pt-20 pb-12">
-      <div className="max-w-300 mx-auto px-12">
-        <div className="grid grid-cols-[1.5fr_1fr_1fr_1.3fr] gap-12">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[1.5fr_1fr_1fr_1.3fr] gap-12">
           {/* Brand */}
           <div>
             <div className="flex items-center gap-3 mb-6">
@@ -82,7 +82,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-16 pt-8 border-t border-[rgba(255,255,255,0.08)] flex justify-between items-center">
+        <div className="mt-16 pt-8 border-t border-[rgba(255,255,255,0.08)] flex flex-col gap-3 items-start sm:flex-row sm:items-center sm:justify-between">
           <span className="font-montserrat text-[0.65rem] text-[rgba(255,255,255,0.3)]">
             © 2024 Lagos Analysis Corporation. All rights reserved.
           </span>
