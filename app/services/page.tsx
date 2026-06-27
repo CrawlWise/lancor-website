@@ -57,9 +57,9 @@ export default function Services() {
   return (
     <>
       {/* HERO */}
-      <section className="bg-[#0e0d0c] pt-16 min-h-[360px] flex items-end relative">
+      <section className="bg-[#0e0d0c] pt-16 min-h-[320px] md:min-h-[360px] flex items-end relative">
         <div className="absolute inset-0 bg-[linear-gradient(to_bottom,#0a0f15_0%,#101820_60%,#0e0d0c_100%)]" />
-        <div className="relative z-[2] max-w-[1200px] w-full mx-auto px-[3rem] pt-[5rem] pb-[4rem]">
+        <div className="relative z-[2] max-w-[1200px] w-full mx-auto px-6 md:px-[3rem] pt-[4rem] md:pt-[5rem] pb-[3rem] md:pb-[4rem]">
           <p className="font-montserrat text-[0.65rem] tracking-[0.2em] text-[#9d8553] uppercase mb-4">OUR CAPABILITIES</p>
           <h1 className="font-cormorant text-[clamp(2.5rem,6vw,4.5rem)] font-normal text-white leading-[1.05] mb-6">
             <em className="italic text-[#9d8553]">Services</em> Portfolio
@@ -71,12 +71,12 @@ export default function Services() {
       </section>
 
       {/* PROCESS BAND */}
-      <section className="bg-[#9d8553] py-[2.5rem] px-[3rem]">
-        <div className="max-w-[1200px] mx-auto flex items-center justify-between flex-wrap gap-4">
+      <section className="bg-[#9d8553] py-8 md:py-[2.5rem] px-6 md:px-[3rem]">
+        <div className="max-w-[1200px] mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-5 md:gap-4">
           <h3 className="font-cormorant text-[1.6rem] font-normal text-[#1a1714]">
             Business Process <em className="italic">Reengineering</em>
           </h3>
-          <div className="flex gap-8">
+          <div className="flex flex-wrap gap-x-5 gap-y-3 md:gap-8">
             {["Analysis", "Design", "Development", "Implementation", "Evaluation"].map((step, i) => (
               <div key={step} className="flex items-center gap-2">
                 <span className="font-montserrat text-[0.6rem] text-[rgba(0,0,0,0.5)] font-medium">0{i + 1}</span>
@@ -97,19 +97,19 @@ export default function Services() {
           return (
             <section
               key={i}
-              className={`py-[6rem] px-[3rem] ${isDark ? "bg-[#0e0d0c]" : "bg-[#f2ede6]"}`}
+              className={`py-14 md:py-[6rem] px-6 md:px-[3rem] ${isDark ? "bg-[#0e0d0c]" : "bg-[#f2ede6]"}`}
             >
               <div className="max-w-[1200px] mx-auto">
-                <div className={`grid ${svc.image ? "grid-cols-2" : "grid-cols-1"} gap-16 items-center`}>
+                <div className={`grid ${svc.image ? "grid-cols-1 md:grid-cols-2" : "grid-cols-1"} gap-8 md:gap-16 items-center`}>
                   {/* Image column (when image should appear first/left) */}
                   {svc.image && imageFirst && (
-                    <div className="relative overflow-hidden min-h-[320px]">
+                    <div className="relative order-2 md:order-none overflow-hidden min-h-[220px] md:min-h-[320px]">
                       <Image src={svc.image} alt={svc.title} fill className="object-cover" />
                     </div>
                   )}
 
                   {/* Text column */}
-                  <div>
+                  <div className={imageFirst ? "order-1 md:order-none" : undefined}>
                     <Icon size={22} color="#9d8553" className="mb-[1.25rem]" />
                     <h2 className={`font-cormorant text-[2rem] font-normal mb-[1.25rem] ${isDark ? "text-white" : "text-[#1a1714]"}`}>{svc.title}</h2>
                     <p className={`font-montserrat text-[0.8rem] leading-[1.9] mb-6 ${isDark ? "text-[rgba(255,255,255,0.6)]" : "text-[#7a6a55]"}`}>{svc.description}</p>
@@ -124,7 +124,7 @@ export default function Services() {
 
                   {/* Image column (when image should appear last/right) */}
                   {svc.image && !imageFirst && (
-                    <div className="relative overflow-hidden min-h-[320px]">
+                    <div className="relative overflow-hidden min-h-[220px] md:min-h-[320px]">
                       <Image src={svc.image} alt={svc.title} fill className="object-cover" />
                     </div>
                   )}
