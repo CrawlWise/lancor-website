@@ -5,9 +5,9 @@ export default function NINEnrollment() {
   return (
     <>
       {/* HERO */}
-      <section className="bg-[#0e0d0c] pt-16 min-h-auto relative px-[3rem] pt-[calc(64px+4rem)] pb-[5rem]">
+      <section className="bg-[#0e0d0c] pt-16 min-h-auto relative px-6 md:px-[3rem] pt-[calc(64px+3rem)] md:pt-[calc(64px+4rem)] pb-12 md:pb-[5rem]">
         <div className="absolute inset-0 bg-[linear-gradient(to_bottom,#0a0e14_0%,#0e0d0c_100%)]" />
-        <div className="relative z-[2] max-w-[1200px] mx-auto grid grid-cols-2 gap-16 items-start">
+        <div className="relative z-[2] max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-start">
           <div>
             <div className="flex items-center gap-[0.6rem] mb-6">
               <div className="w-2 h-2 rounded-full bg-[#4ade80]" />
@@ -21,14 +21,14 @@ export default function NINEnrollment() {
             <p className="font-montserrat text-[0.8rem] text-[rgba(255,255,255,0.65)] leading-[1.9] mb-8">
               LANCOR, in partnership with <strong className="text-white font-medium">Knowledge Square LLC</strong>, is an officially authorized center for Nigerian National Identification Number (NIN) enrollment serving Nigerians in the Greater Boston area and beyond.
             </p>
-            <div className="flex gap-4 flex-wrap">
-              <a href="https://calendly.com/iqid_usa/boston" className="btn-gold"><Calendar size={14} /> BOOK APPOINTMENT</a>
-              <a href="tel:+16174316200" className="btn-outline"><Phone size={14} /> CALL US</a>
+            <div className="flex flex-col sm:flex-row gap-4 flex-wrap">
+              <a href="https://calendly.com/iqid_usa/boston" className="btn-gold justify-center"><Calendar size={14} /> BOOK APPOINTMENT</a>
+              <a href="tel:+16174316200" className="btn-outline justify-center"><Phone size={14} /> CALL US</a>
             </div>
           </div>
 
           {/* Info card */}
-          <div className="border border-[rgba(157,133,83,0.3)] p-[2.5rem] bg-[rgba(157,133,83,0.05)]">
+          <div className="border border-[rgba(157,133,83,0.3)] p-6 md:p-[2.5rem] bg-[rgba(157,133,83,0.05)]">
             <h3 className="font-cormorant text-[1.5rem] font-normal text-white mb-8">Enrollment Center Details</h3>
             {[
               { icon: MapPin, label: "LOCATION", val: "2000 Commonwealth Ave, Suite 310\nNewton Auburndale, MA 02466" },
@@ -52,8 +52,8 @@ export default function NINEnrollment() {
       </section>
 
       {/* WHAT IS NIN + WHY YOU NEED */}
-      <section className="bg-[#f2ede6] py-[7rem] px-[3rem]">
-        <div className="max-w-[1200px] mx-auto grid grid-cols-2 gap-[5rem]">
+      <section className="bg-[#f2ede6] py-14 md:py-[7rem] px-6 md:px-[3rem]">
+        <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-[5rem]">
           <div>
             <p className="font-montserrat text-[0.65rem] tracking-[0.2em] text-[#9d8553] uppercase mb-[1.2rem]">BACKGROUND</p>
             <h2 className="font-cormorant text-[clamp(2rem,4vw,3rem)] font-normal text-[#1a1714] leading-[1.15] mb-6">
@@ -98,20 +98,20 @@ export default function NINEnrollment() {
       </section>
 
       {/* HOW IT WORKS */}
-      <section className="bg-[#0e0d0c] py-[7rem] px-[3rem]">
+      <section className="bg-[#0e0d0c] py-14 md:py-[7rem] px-6 md:px-[3rem]">
         <div className="max-w-[1200px] mx-auto">
           <p className="font-montserrat text-[0.65rem] tracking-[0.2em] text-[#9d8553] uppercase mb-[1.2rem]">THE PROCESS</p>
-          <h2 className="font-cormorant text-[clamp(2rem,4vw,3rem)] font-normal text-white mb-[4rem]">
+          <h2 className="font-cormorant text-[clamp(2rem,4vw,3rem)] font-normal text-white mb-10 md:mb-[4rem]">
             How It <em className="italic text-[#9d8553]">Works</em>
           </h2>
-          <div className="grid grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
             {[
               { step: "01", title: "Book an Appointment", desc: "Schedule your NIN enrollment appointment online via Calendly. Enrollment is by appointments only — no walk-ins." },
               { step: "02", title: "Prepare Your Documents", desc: "Bring a valid International passport, birth certificate, and NPC Digitized Certificate to your appointment." },
               { step: "03", title: "Visit Our Center", desc: "Come to our Newton, MA office at your scheduled time. Arrive on time - appointments run efficiently with minimal wait." },
               { step: "04", title: "Receive Your NIN", desc: "Your National Identification Number is issued by NIMC. We facilitate the process securely and professionally." },
             ].map((s, index, arr) => (
-            <div key={s.step} className={`pt-8 ${index < arr.length - 1 ? "border-r mr-4":""} border-[rgba(157,133,83,0.3)]`}>
+            <div key={s.step} className={`pt-8 ${index < arr.length - 1 ? "md:border-r md:mr-4":""} border-[rgba(157,133,83,0.3)]`}>
                 <div className="font-cormorant text-[2.5rem] text-[rgba(157,133,83,0.3)] leading-none mb-5">{s.step}</div>
                 <h3 className="font-cormorant text-[1.3rem] font-normal text-white mb-3">{s.title}</h3>
                 <p className="font-montserrat text-[0.75rem] text-[rgba(255,255,255,0.5)] leading-[1.8]">{s.desc}</p>
@@ -122,8 +122,8 @@ export default function NINEnrollment() {
       </section>
 
       {/* CTA */}
-        <section className="bg-[#f2ede6] py-[7rem] px-[3rem]">
-          <div className="max-w-[672px] mx-auto bg-[#9d8553] p-[3rem]">
+        <section className="bg-[#f2ede6] py-14 md:py-[7rem] px-6 md:px-[3rem]">
+          <div className="max-w-[672px] mx-auto bg-[#9d8553] p-6 md:p-[3rem]">
             <Globe size={28} color="#1a1714" className="mb-6" />
             <h2 className="font-cormorant text-[clamp(2rem,4vw,2.8rem)] font-normal text-[#1a1714] mb-6">
               Ready to Get Your NIN?
@@ -151,7 +151,7 @@ export default function NINEnrollment() {
           </div>
         </section>
         {/* GOOGLE REVIEWS */}
-        <section className="bg-[#0e0d0c] py-28 px-12">
+        {/* <section className="bg-[#0e0d0c] py-28 px-12">
           <div className="max-w-300 mx-auto">
             <div className="flex items-end justify-between flex-wrap gap-6 mb-14">
               <div>
@@ -255,7 +255,7 @@ export default function NINEnrollment() {
               </a>
             </div>
           </div>
-        </section>
+        </section> */}
     </>
   );
 }
