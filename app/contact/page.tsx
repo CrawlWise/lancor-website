@@ -10,7 +10,7 @@ export default function Contact() {
       {/* HERO */}
       <section className="bg-[#0e0d0c] pt-16 min-h-[220px] flex items-end">
         <div className="absolute left-0 right-0 top-0 h-[284px] bg-[linear-gradient(to_bottom,#0a0e14_0%,#0e0d0c_100%)]" />
-        <div className="relative z-[2] max-w-[1200px] w-full mx-auto px-[3rem] pt-[4rem] pb-[3rem]">
+        <div className="relative z-[2] max-w-[1200px] w-full mx-auto px-6 md:px-[3rem] pt-12 md:pt-[4rem] pb-10 md:pb-[3rem]">
           <h1 className="font-cormorant text-[clamp(2.5rem,6vw,4.5rem)] font-normal text-white leading-[1.05]">
             Contact <em className="italic text-[#9d8553]">Us</em>
           </h1>
@@ -18,10 +18,10 @@ export default function Contact() {
       </section>
 
       {/* MAIN CONTACT */}
-      <section className="bg-[#f2ede6] py-[7rem] px-[3rem]">
-        <div className="max-w-[1200px] mx-auto grid grid-cols-2 gap-[5rem] items-start">
+      <section className="bg-[#f2ede6] py-14 md:py-[7rem] px-6 md:px-[3rem]">
+        <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-[5rem] items-start">
           {/* Info */}
-          <div>
+          <div className="mt-10 lg:mt-0">
             <p className="font-montserrat text-[0.65rem] tracking-[0.2em] text-[#9d8553] uppercase mb-[1.2rem]">CONTACT INFORMATION</p>
             <h2 className="font-cormorant text-[clamp(2rem,4vw,3rem)] font-normal text-[#1a1714] leading-[1.15] mb-[2.5rem]">
               Let&apos;s Start a <em className="italic">Conversation</em>
